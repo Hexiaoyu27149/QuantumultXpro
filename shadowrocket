@@ -892,6 +892,7 @@ DOMAIN-SUFFIX,tdesktop.com,PROXY
 DOMAIN-SUFFIX,telegra.ph,PROXY,force-remote-dns
 DOMAIN-SUFFIX,telegram.me,PROXY
 DOMAIN-SUFFIX,telegram.org,PROXY,force-remote-dns
+DOMAIN-SUFFIX,telesco.pe,PROXY,force-remote-dns
 IP-CIDR,91.108.4.0/22,PROXY,no-resolve
 IP-CIDR,91.108.8.0/22,PROXY,no-resolve
 IP-CIDR,91.108.12.0/22,PROXY,no-resolve
@@ -1794,6 +1795,7 @@ DOMAIN-SUFFIX,zhimg.com,DIRECT
 DOMAIN-SUFFIX,zhuihd.com,DIRECT
 DOMAIN,download.jetbrains.com,DIRECT
 DOMAIN,images-cn.ssl-images-amazon.com,DIRECT
+DOMAIN,cdn.angruo.com,DIRECT
 
 # Local Area Network
 DOMAIN-SUFFIX,local,DIRECT
@@ -2148,8 +2150,6 @@ FINAL,PROXY
 ^https?:\/\/msspjh\.emarbox\.com\/getAdConfig - reject
 ^https?:\/\/api\.videozhishi\.com\/api\/getAdvertising - reject
 ^https?:\/\/api\.rr\.tv\/ad\/ - reject
-# > 人人影视
-^https?:\/\/ctrl\.(playcvn|zmzapi)\.(com|net)\/app\/(ads|init) - reject
 # > 日日煮
 ^https?:\/\/api\.daydaycook\.com\.cn\/daydaycook\/server\/ad\/ - reject
 ^https?:\/\/cms\.daydaycook\.com\.cn\/api\/cms\/advertisement\/ - reject
