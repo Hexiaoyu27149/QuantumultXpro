@@ -4,6 +4,7 @@ server_check_url=http://bing.com/
 excluded_routes=192.168.0.0/16, 193.168.0.0/24, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8
 dns_exclusion_list = *.cmpassport.com,  *.jegotrip.com.cn, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com
 [dns]
+server=1.2.4.8
 server=119.29.29.29
 server=223.5.5.5
 server=114.114.114.114
