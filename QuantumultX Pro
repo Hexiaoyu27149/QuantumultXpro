@@ -1,4 +1,4 @@
-# Update-2020.05.18.23.30
+# Update-2020.05.21.14.00
 [general]
 server_check_url=http://bing.com/
 excluded_routes=192.168.0.0/16, 193.168.0.0/24, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8
@@ -8,20 +8,12 @@ server=1.2.4.8
 server=119.29.29.29
 server=223.5.5.5
 [policy]
-static=Domestic, direct, proxy, reject , img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Domestic.png
-static=AdBlock, direct, proxy, reject, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Reject.png
-static=Apple_CDN, direct, proxy, reject, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/App_Store.png
-static=Apple_API, direct, proxy, reject, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Apple.png
 static=Final, proxy, direct, img-url=https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/IconSet/Outside.png
 static=GlobalMedia, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/GlobalMedia.png
 static=HKMTMedia, direct, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/HKMTMedia.png
 static=Apple, direct, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Apple.png
 [server_remote]
 [filter_remote]
-https://raw.githubusercontent.com/eHpo1/Rules/master/QuantumultX/Filter/Region.txt, tag=Domestic（Region修正）, update-interval=86400, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/eHpo1/Rules/master/QuantumultX/Filter/Liby.txt, tag=AdBlock（eHpo1去广告）, update-interval=86400, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/eHpo1/Rules/master/QuantumultX/Filter/Apple_CDN.txt, tag=Apple_CDN, update-interval=86400, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/eHpo1/Rules/master/QuantumultX/Filter/Apple_API.txt, tag=Apple_API, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRule.list, tag=7000+去广告订阅, enabled=true
 https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Unbreak.list, tag=后续规则修正, enabled=true
 https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Advertising.list, tag=广告, enabled=true
