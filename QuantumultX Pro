@@ -1,4 +1,4 @@
-# Update-2020.06.14.07.05
+# Update-2020.06.14.15.40
 [general]
 server_check_url=http://bing.com/
 excluded_routes=192.168.0.0/16, 193.168.0.0/24, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8
@@ -26,6 +26,7 @@ https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter
 https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Apple.list, tag=Apple 服务, enabled=true
 https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/China.list, tag=中国直连, enabled=true
 [rewrite_remote]
+https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Js.conf, tag=nzw9314, update-interval=86400, opt-parser=true, enabled=true
 https://raw.githubusercontent.com/eHpo1/Rules/master/QuantumultX/Rewrite.txt, tag=eHpo1, enabled=true
 https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Rewrite_lhie1.conf, tag=NobyDa（Rewrite_lhie1）, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Rewrite.conf, tag=神机规则Pro, enabled=true
@@ -47,12 +48,6 @@ geoip, cn, direct
 final, Final
 [rewrite_local]
 ^https?:\/\/www\.zhihu\.com\/ url request-header (\r\n)User-Agent:.+(\r\n) request-header $1User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36$2
-^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua) url script-response-body wb_launch.js
-^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/photos/pic_recommend_status|video/tiny_stream_video_list) url script-response-body wb_ad.js
-^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad url script-response-body Wechat.js
-^https?://amdc\.m\.taobao\.com/amdc/mobileDispatch url script-response-body tb_price.js
-^https://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail url script-response-body tb_price.js
-^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice) url script-response-body Kuwo.js
 [mitm]
-hostname =*.googlevideo.com,api.weibo.cn, mapi.weibo.com, *.uve.weibo.com,mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com,*.kuwo.cn,www.zhihu.com,
+hostname =*.googlevideo.com,
 
