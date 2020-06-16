@@ -1,4 +1,4 @@
-# Update-2020.06.16.13.15
+# Update-2020.06.16.17.45
 # Applicable to Quantumult X (App Store) v1.0.10.-build313
 [general]
 server_check_url=http://bing.com/
@@ -88,8 +88,11 @@ https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body
 https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body https://raw.githubusercontent.com/wangxiaochao1996/Alex0510/master/Script/ydybj.js
 #WPS解锁VIP
 ^https://account.wps.*/api/users/ url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js
-# 哔哩哔哩番剧开启1080P+
+# bilibili番剧开启1080P+
 https:\/\/ap(p|i)\.bilibili\.com\/((pgc\/player\/api\/playurl)|(x\/v2\/account\/myinfo\?)|(x\/v2\/account/mine\?)) url script-response-body https://raw.githubusercontent.com/Sunert/Scripts/master/Script/Bilibili/BiliHD.js
+#bilibili解锁大会员视频
+https://api.bilibili.com/pgc/view/app/season url 302 http://api.bili.best/season
+https://api.bilibili.com/pgc/player/api/playurl url 302 http://api.bili.best/playurl
 [task_local]
 [mitm]
 hostname =*.googlevideo.com,api.weibo.cn, mapi.weibo.com, *.uve.weibo.com,mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com,*.kuwo.cn,vip1.kuwo.cn,www.zhihu.com,api.vuevideo.net,pan.baidu.com,api.m.jd.com,note.youdao.com,account.wps.cn,api.bilibili.com,
