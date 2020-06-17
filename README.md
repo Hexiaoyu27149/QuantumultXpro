@@ -1,5 +1,5 @@
                     No Ad Rule
                     
-        本规则自用，如有雷同，纯属巧合，不喜勿喷。
-                  自用规则，佛系更新。
+       This rule is for your own use. Any similarities are purely coincidental. Do not like to spray.
+                   Own rules, the Buddha Department is updated.
 
