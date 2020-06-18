@@ -1,10 +1,11 @@
-# Update-2020.06.18.00.30
+# Update-2020.06.18.17.25
 # Applicable to Quantumult X (App Store) v1.0.10.-build313
 [general]
 server_check_url=http://bing.com/
 excluded_routes=192.168.0.0/16, 193.168.0.0/24, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8
 dns_exclusion_list = *.cmpassport.com,  *.jegotrip.com.cn, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com
 resource_parser_url=https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
+geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IP_API.js
 [dns]
 server=1.2.4.8
 server=119.29.29.29
@@ -85,5 +86,7 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 #WPS解锁VIP
 ^https://account.wps.*/api/users/ url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js
 [task_local]
+#疫情动态 
+0 3 * * * https://raw.githubusercontent.com/Mazetsz/QX/master/nCov_new.js, tag=疫情动态, img-url=https://raw.githubusercontent.com/Orz-3/task/master/COVID-19.png,enabled=true
 [mitm]
-hostname =8.8.8.8,*.googlevideo.com,api.weibo.cn, mapi.weibo.com, *.uve.weibo.com,mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com,*.kuwo.cn,vip1.kuwo.cn,www.zhihu.com,api.vuevideo.net,pan.baidu.com,api.m.jd.com,note.youdao.com,account.wps.cn,
+hostname =,*.googlevideo.com,api.weibo.cn, mapi.weibo.com, *.uve.weibo.com,mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com,*.kuwo.cn,vip1.kuwo.cn,www.zhihu.com,api.vuevideo.net,pan.baidu.com,api.m.jd.com,note.youdao.com,account.wps.cn,
