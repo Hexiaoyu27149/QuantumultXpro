@@ -1,4 +1,4 @@
-# Update-2020.06.18.17.25
+# Update-2020.06.20.13.30
 # Applicable to Quantumult X (App Store) v1.0.10.-build313
 [general]
 server_check_url=http://bing.com/
@@ -45,11 +45,11 @@ https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Rewrite_lhie1
 https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Rewrite.conf, tag=神机规则Pro, enabled=true
 [server_local]
 [filter_local]
-#如果需要屏蔽iOS系统更新、请自行删除掉屏蔽代码开头的“;”#
+#如果需要屏蔽iOS系统更新、请自行删除掉屏蔽代码开头的“;”
 ;host, mesu.apple.com, reject
 ;host, gdmf.apple.com, reject
 ;host, updates-http.cdn-apple.com, reject
-#App Store加速
+#App Store
 host, p14-buy.itunes.apple.com,proxy
 #绕过企业证书过期
 host, ocsp.apple.com, reject
@@ -87,6 +87,6 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 ^https://account.wps.*/api/users/ url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js
 [task_local]
 #疫情动态 
- 0 8-22/4 * * * https://raw.githubusercontent.com/Mazetsz/QX/master/nCov_new.js, tag=疫情动态, img-url=https://raw.githubusercontent.com/Orz-3/task/master/COVID-19.png,enabled=true
+0 8-23/1 * * * https://raw.githubusercontent.com/Mazetsz/QX/master/nCov_new.js, tag=疫情动态, img-url=https://raw.githubusercontent.com/Orz-3/task/master/COVID-19.png,enabled=true
 [mitm]
 hostname =,*.googlevideo.com,api.weibo.cn, mapi.weibo.com, *.uve.weibo.com,mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com,*.kuwo.cn,vip1.kuwo.cn,www.zhihu.com,api.vuevideo.net,pan.baidu.com,api.m.jd.com,note.youdao.com,account.wps.cn,
