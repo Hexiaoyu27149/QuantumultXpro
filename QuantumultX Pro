@@ -1,4 +1,4 @@
-# Update-2020.06.20.14.50
+# Update-2020.06.20.21.00
 # Applicable to Quantumult X (App Store) v1.0.10.-build313
 [general]
 server_check_url=http://bing.com/
@@ -74,8 +74,10 @@ https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body
 https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body https://raw.githubusercontent.com/wangxiaochao1996/Alex0510/master/Script/ydybj.js
 #WPS解锁VIP
 ^https://account.wps.*/api/users/ url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js
+# 扫描全能王 pro
+^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\? url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/CamScanner.js
 [task_local]
 #疫情动态 
 0 8-23/3 * * * https://raw.githubusercontent.com/Mazetsz/QX/master/nCov_new.js, tag=疫情动态, img-url=https://raw.githubusercontent.com/Orz-3/task/master/COVID-19.png,enabled=true
 [mitm]
-hostname =*.googlevideo.com,api.weibo.cn, mapi.weibo.com, *.uve.weibo.com,mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com,*.kuwo.cn,vip1.kuwo.cn,www.zhihu.com,api.vuevideo.net,pan.baidu.com,api.m.jd.com,note.youdao.com,account.wps.cn,
+hostname =*.googlevideo.com,api.weibo.cn, mapi.weibo.com, *.uve.weibo.com,mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com,*.kuwo.cn,vip1.kuwo.cn,www.zhihu.com,api.vuevideo.net,pan.baidu.com,api.m.jd.com,note.youdao.com,account.wps.cn,ap*.intsig.net,
