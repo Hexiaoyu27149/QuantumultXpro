@@ -1,4 +1,4 @@
-# Update-2020.07.11.15.00
+# Update-2020.07.14.22.00
 # Applicable to Quantumult X (App Store) v1.0.12.-build335
 [general]
 server_check_url=http://bing.com/
@@ -18,6 +18,7 @@ static=GlobalMedia, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qur
 static=HKMTMedia, direct, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/HKMTMedia.png
 static=Apple, direct, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Apple.png
 [server_remote]
+https://api.ytoo-163cdn.com/sub?target=quanx&url=https%3A%2F%2Fsub88.xyz%2Flink%2FqhJP2GXNaIuz5hdp%3Flist%3Dquantumultx&append_type=true&emoji=true&list=true&udp=true&tfo=true&scv=false&fdn=false&sort=true, tag=布丁网络, update-interval=86400, opt-parser=false, enabled=true
 [filter_remote]
 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block_Plus.txt, tag=AD_Block_Plus, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRule.list, tag=7000+去广告订阅, update-interval=86400, opt-parser=false, enabled=true
@@ -43,6 +44,10 @@ https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Rewrite_lhie1
 host, p14-buy.itunes.apple.com,proxy
 #绕过企业证书过期
 host, ocsp.apple.com, reject
+#迅雷版权问题
+host, hub5idx.v6.shub.sandai.net, reject
+host, hub5emu.v6.shub.sandai.net, reject
+host, hub5btmain.v6.shub.sandai.net, reject
 #去除YouTube++底部广告
 host-suffix, ehg-youtube.hitbox.com, reject
 ip-cidr, 10.0.0.0/8, direct
@@ -91,5 +96,7 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 [task_local]
 #疫情动态 （默认每天8～23点、每小时播报一次）
 0 8-23/1 * * * https://raw.githubusercontent.com/Mazetsz/QX/master/nCov_new.js, tag=疫情动态, img-url=https://raw.githubusercontent.com/Orz-3/task/master/COVID-19.png,enabled=true
+# 疫情辟谣 
+0 9 * * * https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Task/nCoVrumors.js, tag=疫情辟谣, img-url=https://raw.githubusercontent.com/Orz-3/task/master/COVID-19.png,enabled=true
 [mitm]
 hostname =*.googlevideo.com,api.weibo.cn, mapi.weibo.com, *.uve.weibo.com,mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com,*.kuwo.cn,vip1.kuwo.cn,api.vuevideo.net,pan.baidu.com,api.m.jd.com,note.youdao.com,account.wps.cn,ap*.intsig.net,duckduckgo.com,
