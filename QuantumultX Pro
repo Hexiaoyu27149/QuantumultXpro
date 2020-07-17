@@ -1,4 +1,4 @@
-# Update-2020.07.15.12.00
+# Update-2020.07.18.00.20
 # Applicable to Quantumult X (App Store) v1.0.12.-build335
 [general]
 server_check_url=http://bing.com/
@@ -93,6 +93,8 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 ^https:\/\/duckduckgo.com\/\?q=bd\+([^&]+).+ url 302 https://www.baidu.com/s?wd=$1
 # 无指令: 谷歌
 ^https:\/\/duckduckgo.com\/\?q=([^&]+).+ url 302 https://www.google.com/search?q=$1
+#google
+^https?:\/\/(www.)?(g|google)\.cn url 302 https://www.google.com
 [task_local]
 #疫情动态 （默认每天8～23点、每小时播报一次）
 0 8-23/1 * * * https://raw.githubusercontent.com/Mazetsz/QX/master/nCov_new.js, tag=疫情动态, img-url=https://raw.githubusercontent.com/Orz-3/task/master/COVID-19.png,enabled=true
