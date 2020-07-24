@@ -1,4 +1,4 @@
-# Update-2020.07.20.11.35
+# Update-2020.07.24.12.00
 # Applicable to Quantumult X (App Store) v1.0.12.-build335
 [general]
 server_check_url=http://bing.com/
@@ -13,6 +13,7 @@ server=119.29.29.29
 server=223.5.5.5
 server=114.114.114.114
 server=8.8.8.8
+server=1.0.0.1
 address=/mtalk.google.com/108.177.125.188
 [policy]
 static=Final, proxy, direct,img-url=https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/IconSet/Outside.png
