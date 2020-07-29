@@ -1,4 +1,4 @@
-# Update-2020.07.27.11.00
+# Update-2020.07.29.11.30
 # Applicable to Quantumult X (App Store) v1.0.13.-build355
 [general]
 server_check_url=http://bing.com/
@@ -101,4 +101,4 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 #疫情动态 （默认每天8～23点、每小时播报一次）
 0 8-23/1 * * * https://raw.githubusercontent.com/Mazetsz/QX/master/nCov_new.js, tag=疫情动态, img-url=https://raw.githubusercontent.com/Orz-3/task/master/COVID-19.png,enabled=true
 [mitm]
-hostname =*.googlevideo.com,api.weibo.cn, mapi.weibo.com, *.uve.weibo.com,mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com,*.kuwo.cn,vip1.kuwo.cn,api.vuevideo.net,pan.baidu.com,api.m.jd.com,note.youdao.com,account.wps.cn,ap*.intsig.net,duckduckgo.com,
+hostname = 8.8.8.8,*.googlevideo.com,api.weibo.cn, mapi.weibo.com, *.uve.weibo.com,mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com,*.kuwo.cn,vip1.kuwo.cn,api.vuevideo.net,pan.baidu.com,api.m.jd.com,note.youdao.com,account.wps.cn,ap*.intsig.net,duckduckgo.com,
