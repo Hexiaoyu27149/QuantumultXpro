@@ -1,4 +1,4 @@
-# Update-2020.08.10.17.55
+# Update-2020.08.10.22.14
 # Applicable to Quantumult X (App Store) v1.0.13.-build355
 [general]
 server_check_url=http://bing.com/
@@ -22,6 +22,7 @@ static=HKMTMedia, direct, proxy, img-url=https://raw.githubusercontent.com/Kools
 static=Apple, direct, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Apple.png
 [server_remote]
 [filter_remote]
+https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRuleTest.list, tag=NobyDa去广告（测试版）, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block_Plus.txt, tag=AD_Block_Plus, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRule.list, tag=7000+去广告订阅, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Unbreak.list, tag=后续规则修正, update-interval=86400, opt-parser=false, enabled=true
@@ -108,4 +109,4 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 #疫情动态 （默认每天8～23点、每小时播报一次）
 0 8-23/1 * * * https://raw.githubusercontent.com/Mazetsz/QX/master/nCov_new.js, tag=疫情动态, img-url=https://raw.githubusercontent.com/Orz-3/task/master/COVID-19.png,enabled=true
 [mitm]
-hostname = 8.8.8.8, *.googlevideo.com,api.weibo.cn, mapi.weibo.com, *.uve.weibo.com,mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com,*.kuwo.cn,vip1.kuwo.cn,api.vuevideo.net,pan.baidu.com,api.m.jd.com,note.youdao.com,account.wps.cn,ap*.intsig.net,duckduckgo.com,www.google.cn,
+hostname = *.googlevideo.com,api.weibo.cn, mapi.weibo.com, *.uve.weibo.com,mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com,*.kuwo.cn,vip1.kuwo.cn,api.vuevideo.net,pan.baidu.com,api.m.jd.com,note.youdao.com,account.wps.cn,ap*.intsig.net,duckduckgo.com,m.youtube.com, s.youtube.com, youtubei.googleapis.com,www.google.cn,
