@@ -1,4 +1,4 @@
-# Update-2020.08.09.08.40
+# Update-2020.08.10.18.00
 # Applicable to Quantumult X (App Store) v1.0.13.-build355
 [general]
 server_check_url=http://www.gstatic.com/generate_404
@@ -9,6 +9,7 @@ dns_exclusion_list = *.cmpassport.com, *.jegotrip.com.cn, *.icitymobile.mobi, id
 no-ipv6
 server=119.29.29.29
 server=223.5.5.5
+server=1.2.4.8
 address=/mtalk.google.com/108.177.125.188
 [policy]
 static=Final, proxy, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Final.png
@@ -17,11 +18,12 @@ static=StreamingSE, direct, proxy, img-url=https://raw.githubusercontent.com/Koo
 static=Guard, reject, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Hijacking.png
 [server_remote]
 [filter_remote]
+https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRuleTest.list, tag=NobyDa去广告（测试版）, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block_Plus.txt, tag=AD_Block_Plus, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRule.list, tag=7000+去广告订阅, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Unbreak.list, tag=规则修正, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Guard/Advertising.list, tag=广告拦截, force-policy=Guard, enabled=true
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Guard/Privacy.list, tag=隐私保护, force-policy=Guard, enabled=false
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Guard/Privacy.list, tag=隐私保护, force-policy=Guard, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Guard/Hijacking.list, tag=运营商劫持或恶意网站, force-policy=Guard, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/StreamingMedia/Streaming.list, tag=国际流媒体服务, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/StreamingMedia/StreamingSE.list, tag=中国流媒体面向海外, enabled=true
@@ -41,10 +43,6 @@ https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrit
 host, p14-buy.itunes.apple.com,proxy
 #绕过企业证书过期
 host, ocsp.apple.com, reject
-#迅雷版权问题
-host, hub5idx.v6.shub.sandai.net, reject
-host, hub5emu.v6.shub.sandai.net, reject
-host, hub5btmain.v6.shub.sandai.net, reject
 #去除YouTube++底部广告
 host-suffix, ehg-youtube.hitbox.com, reject
 host-suffix, local, direct
@@ -91,10 +89,16 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 ^https:\/\/duckduckgo.com\/\?q=bd\+([^&]+).+ url 302 https://www.baidu.com/s?wd=$1
 # 无指令: 谷歌
 ^https:\/\/duckduckgo.com\/\?q=([^&]+).+ url 302 https://www.google.com/search?q=$1
-#google
-^https?:\/\/(www.)?(g|google)\.cn url 302 https://www.google.com
+# yuotube去广告
+^https?:\/\/.+\.googlevideo\.com\/.+(&oad|ctier) url reject-200
+^https?:\/\/youtubei\.googleapis\.com\/youtubei\/.+ad_ url reject-200
+^https?:\/\/\w+\.youtube\.com\/api\/stats\/(ads|.+adformat) url reject-200
+^https?:\/\/\w+\.youtube\.com\/(pagead|ptracking) url reject-200
+#Google Maps重定向
+^https?:\/\/(www.)?g\.cn url 302 https:\/\/www.google.com
+^https?:\/\/(www.)?google\.cn url 302 https:\/\/www.google.com
 [task_local]
 #疫情动态 （默认每天8～23点、每小时播报一次）
 0 8-23/1 * * * https://raw.githubusercontent.com/Mazetsz/QX/master/nCov_new.js, tag=疫情动态, img-url=https://raw.githubusercontent.com/Orz-3/task/master/COVID-19.png,enabled=true
 [mitm]
-hostname = *.googlevideo.com,api.weibo.cn, mapi.weibo.com, *.uve.weibo.com,mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com,*.kuwo.cn,vip1.kuwo.cn,api.vuevideo.net,pan.baidu.com,api.m.jd.com,note.youdao.com,account.wps.cn,ap*.intsig.net,duckduckgo.com,
+hostname = *.googlevideo.com,api.weibo.cn, mapi.weibo.com, *.uve.weibo.com,mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com,*.kuwo.cn,vip1.kuwo.cn,api.vuevideo.net,pan.baidu.com,api.m.jd.com,note.youdao.com,account.wps.cn,ap*.intsig.net,duckduckgo.com,m.youtube.com, s.youtube.com, youtubei.googleapis.com,www.google.cn,
