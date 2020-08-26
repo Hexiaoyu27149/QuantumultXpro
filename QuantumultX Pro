@@ -14,6 +14,8 @@ server=223.5.5.5
 server=114.114.114.114
 server=8.8.8.8
 server=1.0.0.1
+server=8.8.4.4
+server=/*testflight.apple.com/8.8.4.4
 address=/mtalk.google.com/108.177.125.188
 [policy]
 static=Final, proxy, direct,img-url=https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/IconSet/Outside.png
