@@ -37,6 +37,7 @@ https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter
 https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Apple.list, tag=Apple 服务, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/China.list, tag=中国直连, update-interval=86400, opt-parser=false, enabled=true
 [rewrite_remote]
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Advertising.conf, tag=神机去广告, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/General.conf, tag=神机复写, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/eHpo1/Rules/master/QuantumultX/Rewrite.txt, tag=eHpo1, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Rewrite_lhie1.conf, tag=NobyDa（Rewrite_lhie1）, update-interval=86400, opt-parser=false, enabled=true
@@ -64,9 +65,6 @@ ip-cidr, 224.0.0.0/24, direct
 geoip, cn, direct
 final, Final
 [rewrite_local]
-#微博去广告
-^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua) url script-response-body https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js
-^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/photos/pic_recommend_status|video/tiny_stream_video_list) url script-response-body https://raw.githubusercontent.com/yichahucha/surge/master/wb_ad.js
 #微信公众号去广告
 ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js
 #淘宝历史价格查询
@@ -104,11 +102,6 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/.+ad_ url reject-200
 ^https?:\/\/\w+\.youtube\.com\/api\/stats\/(ads|.+adformat) url reject-200
 ^https?:\/\/\w+\.youtube\.com\/(pagead|ptracking) url reject-200
-#google
-^https?:\/\/(www.)?(g|google)\.cn url 302 https://www.google.com
-#Google Maps重定向
-^https?:\/\/(www.)?g\.cn url 302 https:\/\/www.google.com
-^https?:\/\/(www.)?google\.cn url 302 https:\/\/www.google.com
 # 百度防跳转
 ^https?:\/\/.*\.baidu\.com url request-header (\r\n)User-Agent:.+(\r\n) request-header $1User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/16C50 Quark/604.1 T7/10.3 SearchCraft/2.6.3 (Baidu; P1 8.0.0)$2
 [task_local]
