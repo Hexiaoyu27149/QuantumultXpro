@@ -1,4 +1,4 @@
-# Update-2020.08.29.15.00
+# Update-2020.08.31.13.50
 # Applicable to Quantumult X (App Store) v1.0.13.-build355
 [general]
 server_check_url=http://www.gstatic.com/generate_204
@@ -16,6 +16,18 @@ server=8.8.8.8
 server=8.8.4.4
 server=/*testflight.apple.com/8.8.4.4
 address=/mtalk.google.com/108.177.125.188
+ address=/pcbeta.com/36.27.212.81
+ address=/uc.pcbeta.com/36.27.212.81
+ address=/m.pcbeta.com/36.27.212.81
+ address=/mac.pcbeta.com/36.27.212.81
+ address=/static.template.pcbeta.com/36.27.212.81
+ address=/web.pcbeta.com/36.27.212.81
+ address=/i.pcbeta.com/36.27.212.81
+ address=/bbs.pcbeta.com/36.27.212.81
+ address=/www.pcbeta.com/36.27.212.81
+ address=/cdn.pcbeta.attachment.inimc.com/36.27.212.81
+ address=/cdn.pcbeta.static.inimc.com/36.27.212.81
+ address=/cdn.pcbeta.css.inimc.com/36.27.212.81
 [policy]
 static=Final, proxy, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Final.png
 static=Streaming, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Streaming.png
@@ -115,4 +127,4 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 #疫情动态 （默认每天8～23点、每小时播报一次）
 0 8-23/1 * * * https://raw.githubusercontent.com/Mazetsz/QX/master/nCov_new.js, tag=疫情动态, img-url=https://raw.githubusercontent.com/Orz-3/task/master/COVID-19.png,enabled=true
 [mitm]
-hostname = *.googlevideo.com,api.weibo.cn, mapi.weibo.com, *.uve.weibo.com,mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com,*.kuwo.cn,vip1.kuwo.cn,api.vuevideo.net,pan.baidu.com,api.m.jd.com,note.youdao.com,account.wps.cn,ap*.intsig.net,duckduckgo.com,m.youtube.com, s.youtube.com, youtubei.googleapis.com,www.google.cn, *.baidu.com,
+hostname = *.googlevideo.com,mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com,*.kuwo.cn,vip1.kuwo.cn,api.vuevideo.net,pan.baidu.com,api.m.jd.com,note.youdao.com,account.wps.cn,ap*.intsig.net,duckduckgo.com,m.youtube.com, s.youtube.com, youtubei.googleapis.com,www.google.cn, *.baidu.com,
