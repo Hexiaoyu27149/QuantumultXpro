@@ -1,4 +1,4 @@
-# Update-2020.08.29.13.00
+# Update-2020.08.31.13.50
 # Applicable to Quantumult X (App Store) v1.0.13.-build355
 [general]
 server_check_url=http://bing.com/
@@ -7,16 +7,28 @@ dns_exclusion_list = *.cmpassport.com,  *.jegotrip.com.cn, *.icitymobile.mobi, *
 resource_parser_url=https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
 geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IP_API.js
 [dns]
+no-system
 no-ipv6
-server=1.2.4.8
 server=119.29.29.29
 server=223.5.5.5
 server=114.114.114.114
-server=8.8.8.8
 server=1.0.0.1
+server=8.8.8.8
 server=8.8.4.4
 server=/*testflight.apple.com/8.8.4.4
 address=/mtalk.google.com/108.177.125.188
+ address=/pcbeta.com/36.27.212.81
+ address=/uc.pcbeta.com/36.27.212.81
+ address=/m.pcbeta.com/36.27.212.81
+ address=/mac.pcbeta.com/36.27.212.81
+ address=/static.template.pcbeta.com/36.27.212.81
+ address=/web.pcbeta.com/36.27.212.81
+ address=/i.pcbeta.com/36.27.212.81
+ address=/bbs.pcbeta.com/36.27.212.81
+ address=/www.pcbeta.com/36.27.212.81
+ address=/cdn.pcbeta.attachment.inimc.com/36.27.212.81
+ address=/cdn.pcbeta.static.inimc.com/36.27.212.81
+ address=/cdn.pcbeta.css.inimc.com/36.27.212.81
 [policy]
 static=Final, proxy, direct,img-url=https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/IconSet/Outside.png
 static=GlobalMedia, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/GlobalMedia.png
