@@ -1,4 +1,4 @@
-# Update-2020.08.31.13.50
+# Update-2020.09.02.08.20
 # Applicable to Quantumult X (App Store) v1.0.13.-build355
 [general]
 server_check_url=http://www.gstatic.com/generate_204
@@ -117,10 +117,7 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 # 无指令: 谷歌
 ^https:\/\/duckduckgo.com\/\?q=([^&]+).+ url 302 https://www.google.com/search?q=$1
 # yuotube去广告
-^https?:\/\/.+\.googlevideo\.com\/.+(&oad|ctier) url reject-200
-^https?:\/\/youtubei\.googleapis\.com\/youtubei\/.+ad_ url reject-200
-^https?:\/\/\w+\.youtube\.com\/api\/stats\/(ads|.+adformat) url reject-200
-^https?:\/\/\w+\.youtube\.com\/(pagead|ptracking) url reject-200
+^https://[\s\S]*\.googlevideo\.com/.*&(oad|ctier) url reject-200
 # 百度防跳转
 ^https?:\/\/.*\.baidu\.com url request-header (\r\n)User-Agent:.+(\r\n) request-header $1User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/16C50 Quark/604.1 T7/10.3 SearchCraft/2.6.3 (Baidu; P1 8.0.0)$2
 [task_local]
