@@ -1,4 +1,4 @@
-# Update-2020.09.08.22.15
+# Update-2020.09.15.14.05
 # Applicable to Quantumult X (App Store) v1.0.13.-build355
 [general]
 server_check_url=http://bing.com/
@@ -7,12 +7,8 @@ dns_exclusion_list = *.cmpassport.com,  *.jegotrip.com.cn, *.icitymobile.mobi, *
 resource_parser_url=https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
 geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IP_API.js
 [dns]
-no-system
 no-ipv6
 server=119.29.29.29
-server=223.5.5.5
-server=114.114.114.114
-server=1.0.0.1
 server=8.8.8.8
 server=8.8.4.4
 server=/*testflight.apple.com/8.8.4.4
