@@ -9,6 +9,8 @@ geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://raw.githubuserc
 [dns]
 no-ipv6
 server=119.29.29.29
+server=1.2.4.8
+server=223.5.5.5
 server=8.8.8.8
 server=8.8.4.4
 server=/*testflight.apple.com/8.8.4.4
