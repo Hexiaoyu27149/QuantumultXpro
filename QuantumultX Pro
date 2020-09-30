@@ -1,5 +1,5 @@
-# Update-2020.09.20.21.40
-# Applicable to Quantumult X (App Store) v1.0.13.-build355
+# Update-2020.09.30.16.55
+# Applicable to Quantumult X (App Store) v1.0.14.-build388
 [general]
 server_check_url=http://www.gstatic.com/generate_204
 resource_parser_url=https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
@@ -32,14 +32,14 @@ static=Guard, reject, direct, img-url=https://raw.githubusercontent.com/Koolson/
 [filter_remote]
 https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRuleTest.list, tag=NobyDa去广告（测试版）, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block_Plus.txt, tag=AD_Block_Plus, update-interval=86400, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRule.list, tag=7000+去广告, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRule.list, tag=7000+去广告订阅, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Unbreak.list, tag=后续修正规则, update-interval=86400, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Guard/Advertising.list, tag=广告拦截, update-interval=86400, enabled=true
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Guard/Hijacking.list, tag=运营商劫持及恶意网站, update-interval=86400, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Guard/Hijacking.list, tag=运营商劫持或恶意网站, update-interval=86400, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/StreamingMedia/Streaming.list, tag=国际流媒体服务, update-interval=86400, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/StreamingMedia/StreamingSE.list, tag=中国流媒体服务(面向海外版本), update-interval=86400, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Global.list, tag=全球加速, update-interval=86400, enabled=true
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/China.list, tag=国内直连, update-interval=86400, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/China.list, tag=中国直连, update-interval=86400, enabled=true
 [rewrite_remote]
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Advertising.conf, tag=神机去广告, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Rewrite_lhie1.conf, tag=NobyDa（Rewrite_lhie1）, update-interval=86400, opt-parser=false, enabled=true
@@ -90,6 +90,10 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 ^https:\/\/duckduckgo.com\/\?q=gh\+([^&]+).+ url 302 https://github.com/search?q=$1
 # wb: 微博
 ^https:\/\/duckduckgo.com\/\?q=wb\+([^&]+).+ url 302 https://s.weibo.com/weibo/$1
+# ytb  (YouTube)
+^https:\/\/duckduckgo.com\/\?q=ytb\+([^&]+).+ url 302 https://www.youtube.com/results?search_query=$1
+# bd: 百度
+^https:\/\/duckduckgo.com\/\?q=bd\+([^&]+).+ url 302 https://www.baidu.com/s?wd=$1
 # 无指令: 谷歌
 ^https:\/\/duckduckgo.com\/\?q=([^&]+).+ url 302 https://www.google.com/search?q=$1
 # 百度防跳转
@@ -97,5 +101,8 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 [task_local]
 #疫情动态 （默认每天8～23点、每小时播报一次）
 0 8-23/1 * * * https://raw.githubusercontent.com/Mazetsz/QX/master/nCov_new.js, tag=疫情动态, img-url=https://raw.githubusercontent.com/Orz-3/task/master/COVID-19.png,enabled=true
+[http_backend]
+https://gitee.com/chavyleung/scripts/raw/master/box/chavy.boxjs.js, tag=BoxJs.net, path=^/, enabled=false
 [mitm]
-hostname = mp.weixin.qq.com, trade-acs.m.taobao.com, amdc.m.taobao.com, *.kuwo.cn, vip1.kuwo.cn, api.vuevideo.net, pan.baidu.com, api.m.jd.com, note.youdao.com, account.wps.cn, ap*.intsig.net, duckduckgo.com, *.baidu.com
+skip_validating_cert = true
+hostname = *.googlevideo.com,mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com,*.kuwo.cn,vip1.kuwo.cn,api.vuevideo.net,pan.baidu.com,api.m.jd.com,note.youdao.com,account.wps.cn,ap*.intsig.net,duckduckgo.com,*.baidu.com,
