@@ -1,5 +1,5 @@
-# Update-2020.10.02.15.25
-# Applicable to Quantumult X (App Store) v1.0.14.-build388
+# Update-2020.10.09.08.40
+# Applicable to Quantumult X (App Store) v1.0.15.-build395
 [general]
 server_check_url=http://www.gstatic.com/generate_204
 resource_parser_url=https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
@@ -41,7 +41,7 @@ https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Global.list, tag=全球加速, update-interval=86400, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/China.list, tag=中国直连, update-interval=86400, enabled=true
 [rewrite_remote]
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Advertising.conf, tag=神机去广告, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/Advertising.conf, tag=神机去广告, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Rewrite_lhie1.conf, tag=NobyDa（Rewrite_lhie1）, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/eHpo1/Rules/master/QuantumultX/Rewrite.txt, tag=eHpo1, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/General.conf, tag=DivineEngine, update-interval=86400, opt-parser=false, enabled=true
@@ -105,4 +105,4 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 https://gitee.com/chavyleung/scripts/raw/master/box/chavy.boxjs.js, tag=BoxJs.net, path=^/, enabled=false
 [mitm]
 skip_validating_cert = true
-hostname = *.googlevideo.com,mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com,*.kuwo.cn,vip1.kuwo.cn,api.vuevideo.net,pan.baidu.com,api.m.jd.com,note.youdao.com,account.wps.cn,ap*.intsig.net,duckduckgo.com,*.baidu.com,
+hostname = mp.weixin.qq.com, trade-acs.m.taobao.com, amdc.m.taobao.com, *.kuwo.cn, vip1.kuwo.cn, api.vuevideo.net, pan.baidu.com, api.m.jd.com, note.youdao.com, account.wps.cn, ap*.intsig.net, duckduckgo.com, *.baidu.com
