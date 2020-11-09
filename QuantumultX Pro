@@ -1,5 +1,5 @@
-# Update-2020.11.05.13.55
-# Applicable to Quantumult X (App Store) v1.0.15.-build395
+# Update-2020.11.09.08.20
+# Applicable to Quantumult X (App Store) v1.0.16.-build429
 [general]
 server_check_url=http://www.gstatic.com/generate_204
 resource_parser_url=https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
@@ -8,6 +8,10 @@ dns_exclusion_list=*.cmpassport.com, *.jegotrip.com.cn, *.icitymobile.mobi, id6.
 [dns]
 no-ipv6
 server=119.29.29.29
+server=223.5.5.5
+server=114.114.114.114
+server=1.0.0.1
+server=8.8.8.8
 server=8.8.4.4
 server=/*testflight.apple.com/8.8.4.4
 address=/mtalk.google.com/108.177.125.188
@@ -30,8 +34,6 @@ static=StreamingSE, direct, proxy, img-url=https://raw.githubusercontent.com/Koo
 static=Guard, reject, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Hijacking.png
 [server_remote]
 [filter_remote]
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Extra/Apple/Siri.list, tag=Siri, update-interval=86400, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Extra/Apple/AppStore.list, tag=App Store, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRuleTest.list, tag=NobyDa去广告（测试版）, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block_Plus.txt, tag=AD_Block_Plus, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRule.list, tag=7000+去广告订阅, update-interval=86400, opt-parser=false, enabled=true
@@ -40,6 +42,8 @@ https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Guard/Hijacking.list, tag=运营商劫持或恶意网站, update-interval=86400, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/StreamingMedia/Streaming.list, tag=国际流媒体服务, update-interval=86400, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/StreamingMedia/StreamingSE.list, tag=中国流媒体服务(面向海外版本), update-interval=86400, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Extra/Apple/Siri.list, tag=Siri, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Extra/Apple/AppStore.list, tag=App Store, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Global.list, tag=全球加速, update-interval=86400, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/China.list, tag=中国直连, update-interval=86400, enabled=true
 [rewrite_remote]
@@ -55,6 +59,8 @@ https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrit
 ;host, updates-http.cdn-apple.com, reject
 #App Store
 host, p14-buy.itunes.apple.com,proxy
+#去掉YouTube++底部广告
+host-suffix, ehg-youtube.hitbox.com, reject
 #绕过企业证书过期
 host, ocsp.apple.com, reject
 host-suffix, local, direct
@@ -100,6 +106,7 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 ^https:\/\/duckduckgo.com\/\?q=([^&]+).+ url 302 https://www.google.com/search?q=$1
 # 百度防跳转
 ^https?:\/\/.*\.baidu\.com url request-header (\r\n)User-Agent:.+(\r\n) request-header $1User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/16C50 Quark/604.1 T7/10.3 SearchCraft/2.6.3 (Baidu; P1 8.0.0)$2
+^https?://boxjs.net url script-analyze-echo-response https://gitee.com/chavyleung/scripts/raw/master/box/chavy.boxjs.js
 [task_local]
 #疫情动态 （默认每天8～23点、每小时播报一次）
 0 8-23/1 * * * https://raw.githubusercontent.com/Mazetsz/QX/master/nCov_new.js, tag=疫情动态, img-url=https://raw.githubusercontent.com/Orz-3/task/master/COVID-19.png,enabled=true
