@@ -1,4 +1,4 @@
-# Update-2020.11.09.08.20
+# Update-2020.11.18.19.35
 # Applicable to Quantumult X (App Store) v1.0.16.-build429
 [general]
 server_check_url=http://www.gstatic.com/generate_204
@@ -15,18 +15,6 @@ server=8.8.8.8
 server=8.8.4.4
 server=/*testflight.apple.com/8.8.4.4
 address=/mtalk.google.com/108.177.125.188
-address=/pcbeta.com/36.27.212.81
-address=/uc.pcbeta.com/36.27.212.81
-address=/m.pcbeta.com/36.27.212.81
-address=/mac.pcbeta.com/36.27.212.81
-address=/static.template.pcbeta.com/36.27.212.81
-address=/web.pcbeta.com/36.27.212.81
-address=/i.pcbeta.com/36.27.212.81
-address=/bbs.pcbeta.com/36.27.212.81
-address=/www.pcbeta.com/36.27.212.81
-address=/cdn.pcbeta.attachment.inimc.com/36.27.212.81
-address=/cdn.pcbeta.static.inimc.com/36.27.212.81
-address=/cdn.pcbeta.css.inimc.com/36.27.212.81
 [policy]
 static=Final, proxy, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Final.png
 static=Streaming, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Streaming.png
@@ -72,6 +60,9 @@ ip-cidr, 224.0.0.0/24, direct
 -geoip, cn, direct
 final, Final
 [rewrite_local]
+#微博去启动及内部广告
+^https?://(sdk|wb)app.uve.weibo.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua) url script-response-body https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js
+^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/photos/pic_recommend_status|video/tiny_stream_video_list|photo/info) url script-response-body https://raw.githubusercontent.com/yichahucha/surge/master/wb_ad.js
 #微信公众号去广告
 ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js
 #淘宝历史价格查询
@@ -114,4 +105,4 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 https://gitee.com/chavyleung/scripts/raw/master/box/chavy.boxjs.js, tag=BoxJs.net, path=^/, enabled=false
 [mitm]
 skip_validating_cert = true
-hostname = mp.weixin.qq.com, trade-acs.m.taobao.com, amdc.m.taobao.com, *.kuwo.cn, vip1.kuwo.cn, api.vuevideo.net, pan.baidu.com, api.m.jd.com, note.youdao.com, account.wps.cn, ap*.intsig.net, duckduckgo.com, *.baidu.com
+hostname = mp.weixin.qq.com, trade-acs.m.taobao.com, amdc.m.taobao.com, *.kuwo.cn, vip1.kuwo.cn, api.vuevideo.net, pan.baidu.com, api.m.jd.com, note.youdao.com, account.wps.cn, ap*.intsig.net, duckduckgo.com, *.baidu.com,api.weibo.cn, mapi.weibo.com, *.uve.weibo.com,
