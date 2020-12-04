@@ -18,7 +18,6 @@ server=120.52.19.113
 server=8.8.4.4
 server=/*testflight.apple.com/8.8.4.4
 address=/mtalk.google.com/108.177.125.188
-
 address=/pcbeta.com/36.27.212.81
 address=/uc.pcbeta.com/36.27.212.81
 address=/m.pcbeta.com/36.27.212.81
@@ -31,7 +30,6 @@ address=/www.pcbeta.com/36.27.212.81
 address=/cdn.pcbeta.attachment.inimc.com/36.27.212.81
 address=/cdn.pcbeta.static.inimc.com/36.27.212.81
 address=/cdn.pcbeta.css.inimc.com/36.27.212.81
-
 [policy]
 static=Final, proxy, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Final.png
 static=Streaming, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Streaming.png
