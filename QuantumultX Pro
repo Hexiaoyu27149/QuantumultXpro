@@ -100,9 +100,6 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 ^https:\/\/duckduckgo.com\/\?q=([^&]+).+ url 302 https://www.google.com/search?q=$1
 #google
 ^https?:\/\/(www.)?(g|google)\.cn url 302 https://www.google.com
-#YouTube去广告
-(^https?:\/\/[\w-]+\.googlevideo\.com\/.+)(ctier=L)(&.+) url 302 $1$3
-^https?:\/\/[\w-]+\.googlevideo\.com\/.+&(oad|ctier) url reject
 # 百度防跳转
 ^https?:\/\/.*\.baidu\.com url request-header (\r\n)User-Agent:.+(\r\n) request-header $1User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/16C50 Quark/604.1 T7/10.3 SearchCraft/2.6.3 (Baidu; P1 8.0.0)$2
 ^https?://boxjs.net url script-analyze-echo-response https://gitee.com/chavyleung/scripts/raw/master/box/chavy.boxjs.js
@@ -113,4 +110,4 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 https://gitee.com/chavyleung/scripts/raw/master/box/chavy.boxjs.js, tag=BoxJs.net, path=^/, enabled=false
 [mitm]
 skip_validating_cert = true
-hostname = *.googlevideo.com,mp.weixin.qq.com, trade-acs.m.taobao.com, amdc.m.taobao.com, *.kuwo.cn, vip1.kuwo.cn, api.vuevideo.net, pan.baidu.com, api.m.jd.com, note.youdao.com, account.wps.cn, ap*.intsig.net, duckduckgo.com, *.baidu.com,api.weibo.cn, mapi.weibo.com, *.uve.weibo.com,
+hostname = mp.weixin.qq.com, trade-acs.m.taobao.com, amdc.m.taobao.com, *.kuwo.cn, vip1.kuwo.cn, api.vuevideo.net, pan.baidu.com, api.m.jd.com, note.youdao.com, account.wps.cn, ap*.intsig.net, duckduckgo.com, *.baidu.com,api.weibo.cn, mapi.weibo.com, *.uve.weibo.com,
