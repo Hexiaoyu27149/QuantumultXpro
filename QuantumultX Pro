@@ -1,4 +1,4 @@
-# Update-2020.12.11.21.40
+# Update-2020.12.12.08.20
 # Applicable to Quantumult X (App Store) v1.0.16.-build429
 [general]
 server_check_url=http://www.gstatic.com/generate_204
@@ -17,6 +17,7 @@ server=1.0.0.1
 server=8.8.8.8
 server=8.8.4.4
 server=/*testflight.apple.com/8.8.4.4
+server=/*testflight.apple.com/23.76.66.98
 address=/mtalk.google.com/108.177.125.188
 [policy]
 static=Final, proxy, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Final.png
