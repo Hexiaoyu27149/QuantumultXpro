@@ -1,4 +1,4 @@
-# Update-2020.12.13.18.30
+# Update-2020.12.15.09.35
 # Applicable to Quantumult X (App Store) v1.0.16.-build429
 [general]
 server_check_url=http://www.gstatic.com/generate_204
@@ -51,6 +51,9 @@ https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrit
 ;host, mesu.apple.com, reject
 ;host, gdmf.apple.com, reject
 ;host, updates-http.cdn-apple.com, reject
+;host, ns.itunes.apple.com, Apple Update
+;host, appldnld.apple.com, Apple Update
+;host, xp.apple.com, Apple Update
 #App Store
 host, p14-buy.itunes.apple.com,proxy
 #去掉YouTube++底部广告
