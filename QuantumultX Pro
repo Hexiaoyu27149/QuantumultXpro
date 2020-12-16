@@ -79,8 +79,6 @@ final, Final
 https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/BaiduCloud.js
 #京东历史价格查询
 ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig) url script-response-body https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js
-#有道云笔记VIP
-https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body https://raw.githubusercontent.com/wangxiaochao1996/Alex0510/master/Script/ydybj.js
 #WPS解锁VIP
 ^https://account.wps.*/api/users/ url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js
 # 扫描全能王 pro
@@ -110,4 +108,4 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 https://gitee.com/chavyleung/scripts/raw/master/box/chavy.boxjs.js, tag=BoxJs.net, path=^/, enabled=false
 [mitm]
 skip_validating_cert = true
-hostname = mp.weixin.qq.com, trade-acs.m.taobao.com, amdc.m.taobao.com, *.kuwo.cn, vip1.kuwo.cn, api.vuevideo.net, pan.baidu.com, api.m.jd.com, note.youdao.com, account.wps.cn, ap*.intsig.net, duckduckgo.com, *.baidu.com,api.weibo.cn, mapi.weibo.com, *.uve.weibo.com,
+hostname = mp.weixin.qq.com, trade-acs.m.taobao.com, amdc.m.taobao.com, *.kuwo.cn, vip1.kuwo.cn, api.vuevideo.net, pan.baidu.com, api.m.jd.com,account.wps.cn, ap*.intsig.net, duckduckgo.com, *.baidu.com,api.weibo.cn, mapi.weibo.com, *.uve.weibo.com,
