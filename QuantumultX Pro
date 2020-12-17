@@ -1,4 +1,4 @@
-# Update-2020.12.16.21.30
+# Update-2020.12.17.18.50
 # Applicable to Quantumult X (App Store) v1.0.17.-build452
 [general]
 server_check_url=http://www.gstatic.com/generate_204
@@ -16,7 +16,7 @@ address=/mtalk.google.com/108.177.125.188
 [policy]
 static=App Store Connect, direct, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/App_Store.png
 static=Apple, direct, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Apple.png
-static=Final, proxy, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Final.png
+static=Final, proxy, direct,img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Final.png
 static=Streaming, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Streaming.png
 static=StreamingSE, direct, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/StreamingSE.png
 static=Guard, reject, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Hijacking.png
@@ -82,6 +82,8 @@ final, Final
 ^https:\/\/api\.vuevideo\.net\/api\/v1\/(users\/.+\/profile|subtitle\/prepare) url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/VUE.js
 #百度云VIP倍速播放
 https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/BaiduCloud.js
+# 有道云笔记VIP
+https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/ydybj.js
 #京东历史价格查询
 ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig) url script-response-body https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js
 #WPS解锁VIP
@@ -113,4 +115,4 @@ https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body
 https://gitee.com/chavyleung/scripts/raw/master/box/chavy.boxjs.js, tag=BoxJs.net, path=^/, enabled=false
 [mitm]
 skip_validating_cert = true
-hostname = mp.weixin.qq.com, trade-acs.m.taobao.com, amdc.m.taobao.com, *.kuwo.cn, vip1.kuwo.cn, api.vuevideo.net, pan.baidu.com, api.m.jd.com,account.wps.cn, ap*.intsig.net, duckduckgo.com, *.baidu.com,api.weibo.cn, mapi.weibo.com, *.uve.weibo.com,
+hostname = mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com, *.kuwo.cn,vip1.kuwo.cn,api.vuevideo.net, pan.baidu.com,api.m.jd.com,account.wps.cn,ap*.intsig.net, duckduckgo.com, *.baidu.com,api.weibo.cn, mapi.weibo.com,*.uve.weibo.com,note.youdao.com,
