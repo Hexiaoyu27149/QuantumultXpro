@@ -16,7 +16,7 @@ address=/mtalk.google.com/108.177.125.188
 [policy]
 static=App Store Connect, direct, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/App_Store.png
 static=Apple, direct, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Apple.png
-static=Final, proxy, direct,img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Final.png
+static=Final, proxy, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Final.png
 static=Streaming, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Streaming.png
 static=StreamingSE, direct, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/StreamingSE.png
 static=Guard, reject, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Hijacking.png
