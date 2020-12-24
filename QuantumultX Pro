@@ -1,4 +1,4 @@
-# Update-2020.12.23.09.25
+# Update-2020.12.24.17.20
 # Applicable to Quantumult X (App Store) v1.0.17.-build452
 [general]
 server_check_url=http://www.gstatic.com/generate_204
@@ -54,6 +54,11 @@ host, p14-buy.itunes.apple.com,proxy
 host-suffix, ehg-youtube.hitbox.com, reject
 #绕过企业证书过期
 host, ocsp.apple.com, reject
+# 避免迅雷版权问题
+host, hub5idx.v6.shub.sandai.net, reject
+host, hub5emu.v6.shub.sandai.net, reject
+host, hub5btmain.v6.shub.sandai.net, reject
+#其他
 host-suffix, local, direct
 ip-cidr, 10.0.0.0/8, direct
 ip-cidr, 127.0.0.0/8, direct
