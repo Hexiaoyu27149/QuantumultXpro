@@ -1,4 +1,4 @@
-# Update-2020.12.24.17.20
+# Update-2020.12.25.10.40
 # Applicable to Quantumult X (App Store) v1.0.17.-build452
 [general]
 server_check_url=http://www.gstatic.com/generate_204
@@ -36,8 +36,8 @@ https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/China.list, tag=中国直连, update-interval=86400, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Extra/ChinaIP.list, tag=China IP, update-interval=86400, enabled=true
 [rewrite_remote]
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/AdvertisingPlus.conf, tag=DivineEngine去广告Plus, update-interval=86400, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/Advertising.conf, tag=DivieEngine去广告, update-interval=86400, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/AdvertisingPlus.conf, tag=DivineEngine去广告Plus, update-interval=86400, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/General.conf, tag=DivineEngine, update-interval=86400, enabled=true
 [server_local]
 [filter_local]
