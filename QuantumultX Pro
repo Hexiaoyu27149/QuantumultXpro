@@ -124,4 +124,4 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 https://gitee.com/chavyleung/scripts/raw/master/box/chavy.boxjs.js, tag=BoxJs.net, path=^/, enabled=false
 [mitm]
 skip_validating_cert = true
-hostname = mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com, *.kuwo.cn,vip1.kuwo.cn,api.vuevideo.net, pan.baidu.com,api.m.jd.com,account.wps.cn,ap*.intsig.net, duckduckgo.com, *.baidu.com,m.baidu.com,api.weibo.cn, mapi.weibo.com,*.uve.weibo.com,note.youdao.com, -*.weibo.com,
+hostname = mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com, *.kuwo.cn,vip1.kuwo.cn,api.vuevideo.net, pan.baidu.com,api.m.jd.com,account.wps.cn,ap*.intsig.net,duckduckgo.com, *.baidu.com,m.baidu.com,api.weibo.cn, mapi.weibo.com,*.uve.weibo.com,note.youdao.com, -*.weibo.com,
