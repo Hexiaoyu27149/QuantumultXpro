@@ -1,4 +1,4 @@
-# Update-2021.01.10.13.05
+# Update-2021.01.10.21.10
 # Applicable to Quantumult X (App Store) v1.0.18.-build475
 [general]
 server_check_url=http://www.gstatic.com/generate_204
@@ -117,7 +117,9 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 ^https?:\/\/(www.)?(g|google)\.cn url 302 https://www.google.com
 # 百度防跳转
 ^https?:\/\/.*\.baidu\.com url request-header (\r\n)User-Agent:.+(\r\n) request-header $1User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/16C50 Quark/604.1 T7/10.3 SearchCraft/2.6.3 (Baidu; P1 8.0.0)$2
-#GitHub访问加速
+#GitHub访问加速(非常抱歉，由于GitHub加速使用的人太多，超过了每日10w次的限制，CloudFlare已经限流导致无法连接。)
+#请大家暂停使用加速方案。
+;^(https?:\/\/(?:raw|gist)\.githubusercontent\.com\/.+)$ url 302 https://github.pengym.workers.dev/$1
 ^(https?:\/\/(?:raw|gist)\.githubusercontent\.com\/.+)$ url 302 https://github.pengym.workers.dev/$1
 [task_local]
 #疫情动态 （默认每天8～23点、每小时播报一次）
