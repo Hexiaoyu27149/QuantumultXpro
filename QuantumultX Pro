@@ -1,4 +1,4 @@
-# Update-2021.01.10.09.20
+# Update-2021.01.10.21.50
 # Applicable to Quantumult X (App Store) v1.0.18.-build475
 [general]
 server_check_url=http://www.gstatic.com/generate_204
@@ -25,7 +25,7 @@ static=StreamingSE, direct, proxy, img-url=https://raw.githubusercontent.com/Koo
 static=Guard, reject, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Hijacking.png
 [server_remote]
 [filter_remote]
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Unbreak.list, tag=后续代理规则修正, update-interval=86400, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Unbreak.list, tag=后续代理规则修正, update-interval=86400, enabled=true
 https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRuleTest.list, tag=NobyDa去广告（测试版）, update-interval=86400, enabled=true
 https://raw.githubusercontent.com/NobyDa/ND-AD/master/QuantumultX/AD_Block_Plus.txt, tag=AD_Block_Plus, update-interval=86400, enabled=true
 https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRule.list, tag=7000+去广告订阅, update-interval=86400, enabled=true
@@ -117,11 +117,6 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 ^https?:\/\/(www.)?(g|google)\.cn url 302 https://www.google.com
 # 百度防跳转
 ^https?:\/\/.*\.baidu\.com url request-header (\r\n)User-Agent:.+(\r\n) request-header $1User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/16C50 Quark/604.1 T7/10.3 SearchCraft/2.6.3 (Baidu; P1 8.0.0)$2
-#GitHub访问加速(非常抱歉，由于GitHub加速使用的人太多，超过了每日10w次的限制，CloudFlare已经限流导致无法连接。)
-#请大家暂停使用加速方案。
-;^(https?:\/\/(?:raw|gist)\.githubusercontent\.com\/.+)$ url 302 https://github.pengym.workers.dev/$1
-#CDN 加速直连(的CDN已经完善、可选择禁用）
-;^https://raw.githubusercontent.com url 307 https://raw.ev2.workers.dev
 [task_local]
 #疫情动态 （默认每天8～23点、每小时播报一次）
 0 8-23/1 * * * https://raw.githubusercontent.com/Mazetsz/QX/master/nCov_new.js, tag=疫情动态, img-url=https://raw.githubusercontent.com/Orz-3/task/master/COVID-19.png,enabled=true
@@ -130,4 +125,4 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 https://gitee.com/chavyleung/scripts/raw/master/box/chavy.boxjs.js, tag=BoxJs.net, path=^/, enabled=false
 [mitm]
 skip_validating_cert = true
-hostname = mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com, *.kuwo.cn,vip1.kuwo.cn,api.vuevideo.net,pan.baidu.com,api.m.jd.com,account.wps.cn,ap*.intsig.net,duckduckgo.com, *.baidu.com,m.baidu.com,api.weibo.cn, mapi.weibo.com,*.uve.weibo.com,note.youdao.com, -*.weibo.com,raw.githubusercontent.com, gist.githubusercontent.com,raw.githubusercontent.com,
+hostname = mp.weixin.qq.com,trade-acs.m.taobao.com,amdc.m.taobao.com, *.kuwo.cn,vip1.kuwo.cn,api.vuevideo.net,pan.baidu.com,api.m.jd.com,account.wps.cn,ap*.intsig.net,duckduckgo.com, *.baidu.com,m.baidu.com,api.weibo.cn, mapi.weibo.com,*.uve.weibo.com,note.youdao.com, -*.weibo.com,
