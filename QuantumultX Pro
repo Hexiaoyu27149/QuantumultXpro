@@ -1,4 +1,4 @@
-# Update-2021.01.10.21.50
+# Update-2021.01.11.11.35
 # Applicable to Quantumult X (App Store) v1.0.18.-build475
 [general]
 server_check_url=http://www.gstatic.com/generate_204
@@ -22,7 +22,7 @@ static=App Store Connect, direct, proxy, reject, img-url=https://raw.githubuserc
 static=Final, proxy, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Final.png
 static=Streaming, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Streaming.png
 static=StreamingSE, direct, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/StreamingSE.png
-static=Guard, reject, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Hijacking.png
+static=Guard, reject, direct, img-url=https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/IconSet/Outside.png
 [server_remote]
 [filter_remote]
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Unbreak.list, tag=后续代理规则修正, update-interval=86400, enabled=true
