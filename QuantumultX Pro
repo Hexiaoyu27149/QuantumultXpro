@@ -1,4 +1,4 @@
-# Update-2021.01.20.09.00
+# Update-2021.01.23.17.05
 # Applicable to Quantumult X (App Store) v1.0.18.-build475
 [general]
 # Quantumult X 会对指定的网址进行相应测试，以确认节点的可用性
@@ -119,6 +119,8 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 ^https?:\/\/(www.)?(g|google)\.cn url 302 https://www.google.com
 # 百度防跳转
 ^https?:\/\/.*\.baidu\.com url request-header (\r\n)User-Agent:.+(\r\n) request-header $1User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/16C50 Quark/604.1 T7/10.3 SearchCraft/2.6.3 (Baidu; P1 8.0.0)$2
+# GitHub 访问加速
+^(https?:\/\/(?:raw|gist)\.githubusercontent\.com\/.+)$ url 302 https://github.pengym.workers.dev/$1
 [task_local]
 # 疫情动态 （默认每天8～23点、每小时播报一次）
 0 8-23/1 * * * https://raw.githubusercontent.com/Mazetsz/QX/master/nCov_new.js, tag=疫情动态, img-url=https://raw.githubusercontent.com/Orz-3/task/master/COVID-19.png,enabled=true
@@ -127,4 +129,4 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 https://gitee.com/chavyleung/scripts/raw/master/box/chavy.boxjs.js, tag=BoxJs.net, path=^/, enabled=false
 [mitm]
 skip_validating_cert = true
-hostname =api.weibo.cn,mapi.weibo.com,*.uve.weibo.com,-*.weibo.com,mp.weixin.qq.com,trade-acs.m.taobao.com,*.kuwo.cn,vip1.kuwo.cn,api.vuevideo.net,pan.baidu.com,note.youdao.com,api.m.jd.com,account.wps.cn,ap*.intsig.net,duckduckgo.com,*.baidu.com,m.baidu.com,
+hostname =api.weibo.cn,mapi.weibo.com,*.uve.weibo.com,-*.weibo.com,mp.weixin.qq.com,trade-acs.m.taobao.com,*.kuwo.cn,vip1.kuwo.cn,api.vuevideo.net,pan.baidu.com,note.youdao.com,api.m.jd.com,account.wps.cn,ap*.intsig.net,duckduckgo.com,*.baidu.com,m.baidu.com,raw.githubusercontent.com, gist.githubusercontent.com,
