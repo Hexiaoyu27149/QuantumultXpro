@@ -1,1 +1,234 @@
 # Update-2021.01.28.13.05
+[General]
+# ---(通用)---
+# 延迟测试
+# > Internet 测试 URL
+internet-test-url = http://www.aliyun.com
+# > 代理测速 URL
+proxy-test-url = http://www.gstatic.com/generate_204
+# > 测试超时（秒）
+# test-timeout = 5
+# TLS 引擎
+tls-provider = openssl
+# GeoIP 数据库
+geoip-maxmind-url = https://raw.githubusercontent.com/JMVoid/ipip2mmdb/release/Country.mmdb
+# IPv6 支持（关闭）
+ipv6 = true
+# ------
+# ---(Wi-Fi 访问)---
+allow-wifi-access = false
+wifi-access-http-port = 6152
+wifi-access-socks5-port = 6153
+# ------
+# ---(远程控制器)---
+# 允许 Surge 请求查看器或 Surge CLI 进行管理控制。
+# 如果允许由 Wi-Fi 控制则将「127.0.0.1」修改为「0.0.0.0」
+# external-controller-access = password@127.0.0.1:6170
+# ------
+# ---(兼容性)---
+# 兼容模式
+# compatibility-mode = 0
+# 跳过代理
+skip-proxy = 127.0.0.1, 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, localhost, *.local
+# 排除简单主机名
+exclude-simple-hostnames = true
+# SSID 组策略
+# 当 Wi-Fi 不是首选网络时 SSID 组策略使用默认策略（仅 macOS 版）
+use-default-policy-if-wifi-not-primary = false
+# ------
+# ---(DNS 服务器)---
+# 电信 118.118.118.118
+# 联通 116.116.116.116
+dns-server = 119.29.29.29, 223.5.5.5, 1.2.4.8, system
+# ------
+# ---(实验性功能)---
+# 使用 Network framework
+# network-framework = true
+# ------
+# ---(高级)---
+# 日志级别
+loglevel = notify
+# 当遇到 REJECT 策略时返回错误页
+show-error-page-for-reject = true
+# Always Real IP Hosts
+# 当 Surge VIF 处理 DNS 问题时，此选项要求 Surge 返回一个真正的 IP 地址，而不是一个假 IP 地址。
+# DNS 数据包将被转发到上游 DNS 服务器。
+always-real-ip = msftconnecttest.com, msftncsi.com, *.msftconnecttest.com, *.msftncsi.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com
+# Hijack DNS
+# 默认情况下，Surge 只返回发送到 Surge DNS 地址的 DNS 查询的假 IP 地址(198.18.0.2)。
+# 有些设备或软件总是使用硬编码的 DNS 服务器。 (例如 Google Speakers 总是使用 8.8.8.8)。 您可以使用此选项劫持查询，以获得一个假地址。
+# hijack-dns = 8.8.8.8:53, 8.8.4.4:53
+# TCP Force HTTP Hosts
+# 让 Surge 把 TCP 连接当作 HTTP 请求来处理。Surge HTTP 引擎将处理这些请求，所有的高级功能，如捕获、重写和脚本等都可以使用。
+force-http-engine-hosts = *.ott.cibntv.net,123.59.31.1,119.18.193.135,122.14.246.33,175.102.178.52
+# VIF Excluded Routes
+# Surge VIF 只能处理 TCP 和 UDP 协议。使用此选项可以绕过特定的 IP 范围，允许所有流量通过。
+# tun-excluded-routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
+# VIF Included Routes
+# 默认情况下，Surge VIF 接口会声明自己是默认路由。但是，由于 Wi-Fi 接口的路由较小，有些流量可能不会通过 Surge VIF 接口。使用此选项可以添加一条较小的路由。
+# tun-included-routes = 192.168.1.12/32
+# ------
+network-framework = false
+wifi-assist = true
+
+[Replica]
+# ---(实验性功能)---
+# 0 为关闭，1 为开启
+# > 隐藏 Apple 请求
+hide-apple-request = 0
+# > 隐藏崩溃追踪器请求
+hide-crash-reporter-request = 1
+# > 隐藏 UDP 会话
+hide-udp = 0
+# > 关键词过滤器
+# none（关闭关键词过滤器） / whitelist（blacklist（仅记录包含关键字的请求）） / blacklist（仅记录不包含关键字的请求） / pattern（匹配通配符的请求）
+# keyword-filter-type = none
+# > 关键词
+# keyword-filter = (null)
+# ------
+
+[Proxy]
+🌐Direct = direct
+⛔️Reject = reject
+
+[Proxy Group]
+🧭Final = select, 🌑Proxy, 🌐Direct
+🌑Proxy = select, Dler
+🎞Streaming = select, 🌑Proxy
+🎞StreamingSE = select, 🌐Direct, 🌑Proxy
+🛡Guard = select, ⛔️Reject, 🌐Direct
+
+[Rule]
+# > Proxy
+PROCESS-NAME,v2ray,🌐Direct
+PROCESS-NAME,ss-local,🌐Direct
+PROCESS-NAME,UUBooster,🌐Direct
+# > Download
+PROCESS-NAME,aria2c,🌐Direct
+PROCESS-NAME,fdm,🌐Direct
+PROCESS-NAME,Folx,🌐Direct
+PROCESS-NAME,NetTransport,🌐Direct
+PROCESS-NAME,Thunder,🌐Direct
+PROCESS-NAME,Transmission,🌐Direct
+PROCESS-NAME,uTorrent,🌐Direct
+PROCESS-NAME,WebTorrent,🌐Direct
+PROCESS-NAME,WebTorrent Helper,🌐Direct
+# Unbreak 后续规则修正
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Unbreak.list,🌐Direct
+# Advertising 广告
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Advertising.list,🛡Guard
+# Privacy 隐私
+# RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Privacy.list,🛡Guard
+# Hijacking 运营商劫持或恶意网站
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Hijacking.list,🛡Guard
+# Streaming 国际流媒体服务
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/Streaming.list,🎞Streaming
+# StreamingSE 中国流媒体服务（面向海外版本）
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/StreamingSE.list,🎞StreamingSE
+# Apple 服务
+# 在 https://github.com/DivineEngine/Profiles/tree/master/Surge/Rulesets/Extra/Apple 获取所需服务引入 Ruleset 类型规则及新建策略组。
+# Global 全球加速
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Global.list,🌑Proxy
+# China 中国直连
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/China.list,🌐Direct
+# Local Area Network 局域网
+RULE-SET,LAN,🌐Direct
+# GeoIP China
+GEOIP,CN,🌐Direct
+FINAL,🧭Final,dns-failed
+
+[Host]
+# Firebase Cloud Messaging
+mtalk.google.com = 108.177.125.188
+
+[URL Rewrite]
+# Redirect Google Search Service
+^(http|https):\/\/(www.)?(g|google)\.cn https://www.google.com 302
+# Redirect Google Maps Service
+^(http|https):\/\/(ditu|maps).google\.cn https://maps.google.com 302
+# Redirect HTTP to HTTPS
+^(http|https):\/\/(www.)?taobao\.com\/ https://taobao.com/ 302
+^(http|https):\/\/(www.)?jd\.com\/ https://www.jd.com/ 302
+^(http|https):\/\/(www.)?mi\.com\/ https://www.mi.com/ 302
+^(http|https):\/\/you\.163\.com\/ https://you.163.com/ 302
+^(http|https):\/\/(www.)?suning\.com\/ https://suning.com/ 302
+^(http|https):\/\/(www.)?yhd\.com\/ https://yhd.com/ 302
+# Weibo Short URL
+^http:\/\/t\.cn https://sinaurl.cn 302
+# Redirect False to True
+# > IGN China to IGN Global
+^(http|https):\/\/(www.)?ign\.xn--fiqs8s\/ http://cn.ign.com/ccpref/us 302
+# > Fake Website Made By C&J Marketing
+^(http|https):\/\/(www.)?abbyychina\.com\/ https://www.abbyy.cn/ 302
+^(http|https):\/\/(www.)?bartender\.cc\/ https://www.macbartender.com/ 302
+^(http|https):\/\/(www.)?(betterzipcn|betterzip)\.(com|net)\/ https://macitbetter.com/ 302
+^(http|https):\/\/(www.)?beyondcompare\.cc\/ https://www.scootersoftware.com/ 302
+^(http|https):\/\/(www.)?bingdianhuanyuan\.cn\/ https://www.faronics.com/zh-hans/products/deep-freeze 302
+^(http|https):\/\/(www.)?chemdraw\.com\.cn\/ https://www.perkinelmer.com.cn/ 302
+^(http|https):\/\/(www.)?codesoftchina\.com\/ https://www.teklynx.com/ 302
+^(http|https):\/\/(www.)?coreldrawchina\.com\/ https://www.coreldraw.com/cn/ 302
+^(http|https):\/\/(www.)?crossoverchina\.com\/ https://www.codeweavers.com/ 302
+^(http|https):\/\/(www.)?dongmansoft\.com\/ https://www.udongman.cn/ 302
+^(http|https):\/\/(www.)?earmasterchina\.cn\/ https://www.earmaster.com/ 302
+^(http|https):\/\/(www.)?easyrecoverychina\.com\/ https://www.ontrack.com/ 302
+^(http|https):\/\/(www.)?ediuschina\.com\/ https://www.grassvalley.com/ 302
+^(http|https):\/\/(www.)?flstudiochina\.com\/ https://www.image-line.com/ 302
+^(http|https):\/\/(www.)?formysql\.com\/ https://www.navicat.com.cn/ 302
+^(http|https):\/\/(www.)?guitarpro\.cc\/ https://www.guitar-pro.com/ 302
+^(http|https):\/\/(www.)?huishenghuiying\.com\.cn\/ https://www.coreldraw.com/cn/ 302
+^(http|https):\/\/hypersnap\.mairuan\.com\/ https://www.hyperionics.com/ 302
+^(http|https):\/\/(www.)?iconworkshop\.cn\/ https://www.axialis.com/ 302
+^(http|https):\/\/(www.)?idmchina\.net\/ https://www.internetdownloadmanager.com/ 302
+^(http|https):\/\/(www.)?imindmap\.cc\/ https://www.ayoa.com/previously-imindmap/ 302
+^(http|https):\/\/(www.)?jihehuaban\.com\.cn\/ https://www.chartwellyorke.com/sketchpad/x24795.html 302
+^(http|https):\/\/hypersnap\.mairuan\.com\/ https://www.keyshot.com/ 302
+^(http|https):\/\/(www.)?kingdeecn\.cn\/ http://www.kingdee.com/ 302
+^(http|https):\/\/(www.)?logoshejishi\.com https://www.sothink.com/product/logo-design-software/ 302
+^(http|https):\/\/logoshejishi\.mairuan\.com\/ https://www.sothink.com/product/logo-design-software/ 302
+^(http|https):\/\/(www.)?luping\.net\.cn\/ https://www.techsmith.com/ 302
+^(http|https):\/\/(www.)?mathtype\.cn\/ https://www.dessci.com/ 302
+^(http|https):\/\/(www.)?mindmanager\.(cc|cn)\/ https://www.mindjet.com/cn/ 302
+^(http|https):\/\/(www.)?mindmapper\.cc\/ https://www.mindmapper.com/ 302
+^(http|https):\/\/(www.)?(mycleanmymac|xitongqingli)\.com\/ https://macpaw.com/ 302
+^(http|https):\/\/(www.)?nicelabel\.cc\/ https://www.nicelabel.com/zh/ 302
+^(http|https):\/\/(www.)?ntfsformac\.cc\/ https://www.tuxera.com/products/tuxera-ntfs-for-mac-cn/ 302
+^(http|https):\/\/(www.)?ntfsformac\.cn\/ https://china.paragon-software.com/home-mac/ntfs-for-mac/ 302
+^(http|https):\/\/(www.)?overturechina\.com\/ https://sonicscores.com/ 302
+^(http|https):\/\/(www.)?passwordrecovery\.cn\/ https://cn.elcomsoft.com/aopr.html 302
+^(http|https):\/\/(www.)?pdfexpert\.cc\/ https://pdfexpert.com/zh 302
+^(http|https):\/\/(www.)?photozoomchina\.com\/ https://www.benvista.com/ 302
+^(http|https):\/\/(www.)?shankejingling\.com\/ https://www.sothink.com/product/flashdecompiler/ 302
+^(http|https):\/\/cn\.ultraiso\.net\/ https://cn.ezbsystems.com/ultraiso/ 302
+^(http|https):\/\/(www.)?vegaschina\.cn\/ https://www.vegascreativesoftware.com/ 302
+^(http|https):\/\/(www.)?xshellcn\.com\/ https://www.netsarang.com/zh/xshell/ 302
+^(http|https):\/\/(www.)?yuanchengxiezuo\.com\/ https://www.teamviewer.com/ 302
+^(http|https):\/\/(www.)?zbrushcn.com/ https://pixologic.com/ 302
+# AbeamTV - api.abema.io
+^(http|https):\/\/api\.abema\.io\/v\d\/ip\/check - reject
+# Block Ads Start
+# Block Ads End
+
+[Header Rewrite]
+# 据粗略统计，有大概三分之二的本项目使用者停留在了 Surge 2、3 时期故而保留了 Rewrite 及 MitM，所以如果你解锁了「模块」功能可以使用 sgmodule 后清空 [URL Rewrite] 及 [MITM] 部分，MitM 证书重新生成配置。
+# 建议必选使用 General.sgmodule，其他 .sgmodule 按需加入
+
+[MITM]
+skip-server-cert-verify = true
+hostname = www.google.cn, api.abema.io, mp.weixin.qq.com, vip1.kuwo.cn, pan.baidu.com, api.vuevideo.net, account.wps.cn, note.youdao.com, -*.weibo.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, trade-acs.m.taobao.com, api.m.jd.com, ap*.intsig.net, greasyfork.org, openuserjs.org
+
+[Script]
+wb_launch.js = type=http-response,pattern=^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js,script-update-interval=0
+wb_ad.js = requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_ad.js,type=http-response,pattern=^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/(photos/pic_recommend_status|live/media_homelist)|video/tiny_stream_video_list|photo/info)
+tb_price.js = requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js,type=http-request,pattern=^http://.+/amdc/mobileDispatch
+tb_price.js = requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js,type=http-response,pattern=^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail
+jd_price.js = type=http-response,pattern=https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js,script-update-interval=0
+BaiduCloud.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/BaiduCloud.js,type=http-response,pattern=https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user
+WeChat.js = script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js,type=http-request,pattern=^https://mp\.weixin\.qq\.com/mp/getappmsgad
+Kuwo.js = requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/KuWoMusicDownload.js,type=http-request,pattern=^https?:\/\/musicpay\.kuwo.cn\/music\.pay\?uid=\d+
+Kuwo.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Kuwo.js,type=http-response,pattern=^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice)
+Wps.js = requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js,type=http-response,pattern=^https://account.wps.*/api/users/
+VUE.js = requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/VUE.js,type=http-response,pattern=^https:\/\/api\.vuevideo\.net\/api\/v1\/(users\/.+\/profile|subtitle\/prepare)
+ydybj.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/ydybj.js,type=http-response,pattern=https://note.youdao.com/yws/(mapi/payment|api/self)
+CamScanner.js = requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/CamScanner.js,type=http-response,pattern=^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\?
+Greasy Fork = type=http-response,pattern=^https:\/\/(greasyfork|openuserjs)\.org\/.*\/.*\.user\.js,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Rewrites/GreasyFork/greasy-fork.js,requires-body=true
+疫情播报 = type=cron,cronexp=0 8-23/1 * * *,wake-system=1,timeout=50,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/nCov.js,script-update-interval=0
