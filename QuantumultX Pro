@@ -92,18 +92,10 @@ final, Final
 ^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail url script-response-body https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js
 # 酷我音乐SVIP
 ^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice) url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Kuwo.js
-# VUE解锁Pro
-^https:\/\/api\.vuevideo\.net\/api\/v1\/(users\/.+\/profile|subtitle\/prepare) url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/VUE.js
 # 百度云VIP倍速播放
 https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/BaiduCloud.js
-# 有道云笔记VIP
-https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/ydybj.js
 # 京东历史价格查询
 ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig) url script-response-body https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js
-# WPS解锁VIP
-^https://account.wps.*/api/users/ url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js
-# 扫描全能王 pro
-^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\? url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/CamScanner.js
 # 以下为Safari全能搜索、需要把Safari的搜索引擎设置为：DuckDuckGo
 # gm   (Google图片)
 ^https:\/\/duckduckgo.com\/\?q=gm\+([^&]+).+ url 302 https://www.google.com/search?&tbm=isch&q=$1
@@ -131,4 +123,4 @@ https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body htt
 https://gitee.com/chavyleung/scripts/raw/master/box/chavy.boxjs.js, tag=BoxJs.net, path=^/, enabled=false
 [mitm]
 skip_validating_cert = true
-hostname =api.weibo.cn,mapi.weibo.com,*.uve.weibo.com,-*.weibo.com,mp.weixin.qq.com,trade-acs.m.taobao.com,*.kuwo.cn,vip1.kuwo.cn,api.vuevideo.net,pan.baidu.com,note.youdao.com,api.m.jd.com,account.wps.cn,ap*.intsig.net,duckduckgo.com,*.baidu.com,m.baidu.com,raw.githubusercontent.com, gist.githubusercontent.com,
+hostname =api.weibo.cn,mapi.weibo.com,*.uve.weibo.com,-*.weibo.com,mp.weixin.qq.com,trade-acs.m.taobao.com,*.kuwo.cn,vip1.kuwo.cn,pan.baidu.com,api.m.jd.com,duckduckgo.com,*.baidu.com,m.baidu.com,raw.githubusercontent.com, gist.githubusercontent.com,
