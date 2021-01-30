@@ -1,4 +1,4 @@
-# Update-2021.01.29.17.15
+# Update-2021.01.30.14.00
 [General]
 # ---(通用)---
 # 延迟测试
@@ -93,8 +93,9 @@ hide-udp = 0
 ⛔️Reject = reject
 
 [Proxy Group]
+Smartmode = url-test, url=http://www.gstatic.com/generate_204, policy-path（此处填写你的机场订阅地址）, update-interval=0
 🧭Final = select, 🌑Proxy, 🌐Direct
-🌑Proxy = select, Dler
+🌑Proxy = select, Smartmode
 🎞Streaming = select, 🌑Proxy
 🎞StreamingSE = select, 🌐Direct, 🌑Proxy
 🛡Guard = select, ⛔️Reject, 🌐Direct
@@ -157,8 +158,8 @@ hostname = www.google.cn, api.abema.io, api.weibo.cn, mapi.weibo.com, *.uve.weib
 微博开屏去广告 = type=http-response,pattern=^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua),requires-body=1,max-size=0,timeout=30,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js,script-update-interval=0
 微博去广告 = type=http-response,pattern=^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/photos/pic_recommend_status|video/tiny_stream_video_list|photo/info),requires-body=1,max-size=-1,timeout=30,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_ad.js,script-update-interval=0
 微信公众号去广告 = type=http-request,pattern=^https://mp\.weixin\.qq\.com/mp/getappmsgad,timeout=30,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js,script-update-interval=0
-#淘宝历史价格查询（手动版）= type=http-request,pattern=^http://.+/amdc/mobileDispatch,requires-body=1,max-size=0,timeout=60,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js,script-update-interval=0
-#淘宝历史价格查询（手动版）= type=http-response,pattern=^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail,requires-body=1,max-size=0,timeout=60,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js,script-update-interval=0
+// 淘宝历史价格查询（手动版） = type=http-request,pattern=^http://.+/amdc/mobileDispatch,requires-body=1,max-size=0,timeout=60,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js,script-update-interval=0
+// 淘宝历史价格查询（手动版） = type=http-response,pattern=^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail,requires-body=1,max-size=0,timeout=60,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js,script-update-interval=0
 淘宝比价1 Lite(通知版) = type=http-request,pattern=^http://.+/amdc/mobileDispatch,requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price_lite.js,script-update-interval=0
 淘宝比价2 Lite(通知版) = type=http-response,pattern=^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail,requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price_lite.js,script-update-interval=0
 百度云VIP倍速播放 = type=http-response,pattern=https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user,requires-body=1,max-size=0,timeout=50,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/BaiduCloud.js,script-update-interval=0
