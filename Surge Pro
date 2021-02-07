@@ -1,5 +1,5 @@
 [General]
-# Update-2021.02.07.15.20
+# Update-2021.02.07.16.30
 # ---(通用)---
 # 延迟测试
 # > Internet 测试 URL
@@ -131,7 +131,6 @@ RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ru
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Global.list,Proxy
 # Apple 服务
 # 在 https://github.com/DivineEngine/Profiles/tree/master/Surge/Rulesets/Extra/Apple 获取所需服务引入 Ruleset 类型规则及新建策略组。
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Apple/Apple.list,Apple
 # China 中国直连
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/China.list,直连
 # Local Area Network 局域网
