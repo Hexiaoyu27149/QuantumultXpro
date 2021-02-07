@@ -96,7 +96,6 @@ hide-udp = 0
 可用性自动测试 = fallback, url=http://www.gstatic.com/generate_204, policy-path=
 Final = select, Proxy, 直连
 Proxy = select, 可用性自动测试, 延迟自动测试
-Apple = select, 直连, Proxy
 Streaming = select, Proxy, 延迟自动测试
 StreamingSE = select, 直连
 Guard = select, 拦截, 直连
@@ -133,18 +132,6 @@ RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ru
 # Apple 服务
 # 在 https://github.com/DivineEngine/Profiles/tree/master/Surge/Rulesets/Extra/Apple 获取所需服务引入 Ruleset 类型规则及新建策略组。
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Apple/Apple.list,Apple
-# Apple Store
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Apple/AppStore.list,Apple
-# App Store Connect
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Apple/AppStoreConnect.list,Apple
-# iCloud email
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Apple/Mail.list,Apple
-# Siri
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Apple/Siri.list,Apple
-# TestFlight
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Apple/TestFlight.list,Apple
-# iCloud
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Apple/iCloud.list,Apple
 # China 中国直连
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/China.list,直连
 # Local Area Network 局域网
