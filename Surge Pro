@@ -1,5 +1,5 @@
 [General]
-# Update-2021.02.12.13.20
+# Update-2021.02.12.15.50
 # ---(通用)---
 # 延迟测试
 # > Internet 测试 URL
@@ -98,9 +98,11 @@ Clubhouse = select, 延迟自动测试
 Streaming = select, 延迟自动测试
 StreamingSE = select, 直连
 Apple = select, 直连, Proxy
+TestFlight=select, 延迟自动测试
 YouTube = select, 延迟自动测试
 Guard = select, 拦截, 直连
-延迟自动测试 = url-test, url=http://www.gstatic.com/generate_204, policy-path=(订阅地址）, update-interval=3600, timeout=0, interval=0, tolerance=0
+延迟自动测试 = url-test, url=http://www.gstatic.com/generate_204, policy-path=（订阅地址）, update-interval=3600, timeout=0, interval=0, tolerance=0
+
 [Rule]
 # > Proxy
 PROCESS-NAME,v2ray,直连
@@ -133,6 +135,8 @@ RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ru
 # Apple 服务
 # 在 https://github.com/DivineEngine/Profiles/tree/master/Surge/Rulesets/Extra/Apple 获取所需服务引入 Ruleset 类型规则及新建策略组。
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Apple/Apple.list,Apple
+# TestFlight
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Apple/TestFlight.list,TestFlight
 # Global 全球加速
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Global.list,Proxy
 # Clubhouse服务
@@ -161,6 +165,7 @@ mtalk.google.com = 108.177.125.188
 [MITM]
 skip-server-cert-verify = true
 hostname = www.google.cn, api.abema.io, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, -*.weibo.com, mp.weixin.qq.com, trade-acs.m.taobao.com, pan.baidu.com, vip1.kuwo.cn, weixin110.qq.com, testflight.apple.com
+
 [Script]
 微博开屏去广告 = type=http-response,pattern=^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua),requires-body=1,max-size=0,timeout=30,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js,script-update-interval=0
 微博去广告 = type=http-response,pattern=^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/photos/pic_recommend_status|video/tiny_stream_video_list|photo/info),requires-body=1,max-size=-1,timeout=30,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_ad.js,script-update-interval=0
