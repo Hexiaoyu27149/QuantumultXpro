@@ -1,5 +1,5 @@
 [General]
-# Update-2021.02.13.15.10
+# Update-2021.02.13.19.60
 # ---(通用)---
 # 延迟测试
 # > Internet 测试 URL
@@ -98,7 +98,7 @@ Streaming = select, 延迟自动测试
 TestFlight = select, 延迟自动测试
 StreamingSE = select, 直连
 Guard = select, 拦截, 直连
-延迟自动测试 = url-test, url=http://www.gstatic.com/generate_204, policy-path=订阅地址, update-interval=3600, timeout=0, interval=0, tolerance=0
+延迟自动测试 = url-test, url=http://www.gstatic.com/generate_204, policy-path=你的订阅地址, update-interval=3600, timeout=0, interval=0, tolerance=0
 
 [Rule]
 # > Proxy
@@ -116,25 +116,25 @@ PROCESS-NAME,uTorrent,直连
 PROCESS-NAME,WebTorrent,直连
 PROCESS-NAME,WebTorrent Helper,直连
 # Unbreak 后续规则修正
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Unbreak.list,直连
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Unbreak.list,直连,update-interval=3600
 # Advertising 广告
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Advertising.list,Guard
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Advertising.list,Guard,update-interval=3600
 # Privacy 隐私
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Privacy.list,Guard
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Privacy.list,Guard,update-interval=3600
 # Hijacking 运营商劫持或恶意网站
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Hijacking.list,Guard
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Hijacking.list,Guard,update-interval=3600
 # Streaming 国际流媒体服务
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/Streaming.list,Streaming
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/Streaming.list,Streaming,update-interval=3600
 # StreamingSE 中国流媒体服务（面向海外版本）
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/StreamingSE.list,StreamingSE
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/StreamingSE.list,StreamingSE,update-interval=3600
 # Global 全球加速
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Global.list,Proxy
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Global.list,Proxy,update-interval=3600
 # Apple 服务
 # 在 https://github.com/DivineEngine/Profiles/tree/master/Surge/Rulesets/Extra/Apple 获取所需服务引入 Ruleset 类型规则及新建策略组。
 # TestFlight
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Apple/TestFlight.list,TestFlight
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Apple/TestFlight.list,TestFlight,update-interval=3600
 # China 中国直连
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/China.list,直连
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/China.list,直连,update-interval=3600
 # Local Area Network 局域网
 RULE-SET,LAN,直连
 # GeoIP China
@@ -155,7 +155,7 @@ mtalk.google.com = 108.177.125.188
 
 [MITM]
 skip-server-cert-verify = true
-hostname = www.google.cn, api.abema.io, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, -*.weibo.com, mp.weixin.qq.com, trade-acs.m.taobao.com, pan.baidu.com, vip1.kuwo.cn, weixin110.qq.com, testflight.apple.com, 
+hostname = www.google.cn, api.abema.io, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, -*.weibo.com, mp.weixin.qq.com, trade-acs.m.taobao.com, pan.baidu.com, vip1.kuwo.cn, weixin110.qq.com, testflight.apple.com
 
 [Script]
 微博开屏去广告 = type=http-response,pattern=^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua),requires-body=1,max-size=0,timeout=30,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js,script-update-interval=0
