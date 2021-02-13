@@ -12,6 +12,9 @@ dns_exclusion_list=*.cmpassport.com, *.jegotrip.com.cn, *.icitymobile.mobi, id6.
 [dns]
 no-ipv6
 server=119.29.29.29
+serene=119.28.28.28
+serene=113.114.114.114
+serene=182.254.116.116
 server=223.5.5.5
 server=1.2.4.8
 server=/*testflight.apple.com/8.8.4.4
