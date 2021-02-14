@@ -59,6 +59,8 @@ https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Rewrite_lhie1
 host, p14-buy.itunes.apple.com,proxy
 # 去掉YouTube++底部广告
 host-suffix, ehg-youtube.hitbox.com, reject
+# 腾讯视频投屏设备搜索
+ip-cidr,239.255.255.250/32,direct
 # 绕过企业证书过期
 host, ocsp.apple.com, reject
 # 避免迅雷版权问题
