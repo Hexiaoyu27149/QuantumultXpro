@@ -1,5 +1,5 @@
 [General]
-# Update-2021.02.13.19.60
+# Update-2021.02.14.09.20
 # ---(通用)---
 # 延迟测试
 # > Internet 测试 URL
@@ -88,57 +88,64 @@ hide-udp = 0
 # ------
 
 [Proxy]
-直连 = direct
-拦截 = reject
+Direct = direct
+Reject = reject
 
 [Proxy Group]
-Final = select, 延迟自动测试
-Proxy = select, 延迟自动测试
-Streaming = select, 延迟自动测试
-TestFlight = select, 延迟自动测试
-StreamingSE = select, 直连
-Guard = select, 拦截, 直连
-延迟自动测试 = url-test, url=http://www.gstatic.com/generate_204, policy-path=你的订阅地址, update-interval=3600, timeout=0, interval=0, tolerance=0
+Final = select, AutoTest
+Proxy = select, AutoTest
+Streaming = select, AutoTest
+StreamingSE = select, Direct
+TestFlight = select, Direct, AutoTest
+Clubhouse = select, SelectTest
+Guard = select, Reject
+# 延迟自动测试
+AutoTest = url-test, url=http://www.gstatic.com/generate_204, policy-path=订阅地址, update-interval=3600, timeout=0, interval=0, tolerance=0
+# 延迟手动测试
+SelectTest = select, policy-path=订阅地址, update-interval=3600, timeout=0, interval=0, tolerance=0
 
 [Rule]
 # > Proxy
-PROCESS-NAME,v2ray,直连
-PROCESS-NAME,ss-local,直连
-PROCESS-NAME,UUBooster,直连
+PROCESS-NAME,v2ray,Direct
+PROCESS-NAME,ss-local,Direct
+PROCESS-NAME,UUBooster,Direct
 # > Download
-PROCESS-NAME,aria2c,直连
-PROCESS-NAME,fdm,直连
-PROCESS-NAME,Folx,直连
-PROCESS-NAME,NetTransport,直连
-PROCESS-NAME,Thunder,直连
-PROCESS-NAME,Transmission,直连
-PROCESS-NAME,uTorrent,直连
-PROCESS-NAME,WebTorrent,直连
-PROCESS-NAME,WebTorrent Helper,直连
-# Unbreak 后续规则修正
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Unbreak.list,直连,update-interval=3600
-# Advertising 广告
+PROCESS-NAME,aria2c,Direct
+PROCESS-NAME,fdm,Direct
+PROCESS-NAME,Folx,Direct
+PROCESS-NAME,NetTransport,Direct
+PROCESS-NAME,Thunder,Direct
+PROCESS-NAME,Transmission,Direct
+PROCESS-NAME,uTorrent,Direct
+PROCESS-NAME,WebTorrent,Direct
+PROCESS-NAME,WebTorrent Helper,Direct
+# 后续规则修正
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Unbreak.list,Direct,update-interval=3600
+# 广告拦截
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Advertising.list,Guard,update-interval=3600
-# Privacy 隐私
+# 隐私保护
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Privacy.list,Guard,update-interval=3600
-# Hijacking 运营商劫持或恶意网站
+# 运营商劫持或恶意网站
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Hijacking.list,Guard,update-interval=3600
-# Streaming 国际流媒体服务
+# 国际流媒体服务
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/Streaming.list,Streaming,update-interval=3600
-# StreamingSE 中国流媒体服务（面向海外版本）
+# 中国流媒体服务（面向海外版本）
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/StreamingSE.list,StreamingSE,update-interval=3600
-# Global 全球加速
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Global.list,Proxy,update-interval=3600
 # Apple 服务
 # 在 https://github.com/DivineEngine/Profiles/tree/master/Surge/Rulesets/Extra/Apple 获取所需服务引入 Ruleset 类型规则及新建策略组。
 # TestFlight
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Apple/TestFlight.list,TestFlight,update-interval=3600
-# China 中国直连
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/China.list,直连,update-interval=3600
-# Local Area Network 局域网
-RULE-SET,LAN,直连
+# Clubhouse
+# 如果的你代理服务器不支持或没有开启 udp-relay，请不要使用本文件。
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Clubhouse.list,Clubhouse,update-interval=3600
+# 全球加速
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Global.list,Proxy,update-interval=3600
+# 中国直连
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/China.list,Direct,update-interval=3600
+# 局域网
+RULE-SET,LAN,Direct
 # GeoIP China
-GEOIP,CN,直连
+GEOIP,CN,Direct
 FINAL,Final,dns-failed
 
 [Host]
@@ -161,8 +168,6 @@ hostname = www.google.cn, api.abema.io, api.weibo.cn, mapi.weibo.com, *.uve.weib
 微博开屏去广告 = type=http-response,pattern=^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua),requires-body=1,max-size=0,timeout=30,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js,script-update-interval=0
 微博去广告 = type=http-response,pattern=^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/photos/pic_recommend_status|video/tiny_stream_video_list|photo/info),requires-body=1,max-size=-1,timeout=30,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_ad.js,script-update-interval=0
 微信公众号去广告 = type=http-request,pattern=^https://mp\.weixin\.qq\.com/mp/getappmsgad,timeout=30,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js,script-update-interval=0
-# 淘宝历史价格查询（手动版） = type=http-request,pattern=^http://.+/amdc/mobileDispatch,requires-body=1,max-size=0,timeout=60,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js,script-update-interval=0
-# 淘宝历史价格查询（手动版） = type=http-response,pattern=^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail,requires-body=1,max-size=0,timeout=60,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js,script-update-interval=0
 淘宝比价1 Lite(通知版) = type=http-request,pattern=^http://.+/amdc/mobileDispatch,requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price_lite.js,script-update-interval=0
 淘宝比价2 Lite(通知版) = type=http-response,pattern=^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail,requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price_lite.js,script-update-interval=0
 百度云VIP倍速播放 = type=http-response,pattern=https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user,requires-body=1,max-size=0,timeout=50,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/BaiduCloud.js,script-update-interval=0
