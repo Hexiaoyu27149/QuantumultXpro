@@ -1,4 +1,4 @@
-# Update-2021.02.13.19.55
+# Update-2021.02.14.09.10
 # Applicable to Quantumult X (App Store) v1.0.19.-build501
 [general]
 # Quantumult X 会对指定的网址进行相应测试，以确认节点的可用性
@@ -13,20 +13,18 @@ dns_exclusion_list=*.cmpassport.com, *.jegotrip.com.cn, *.icitymobile.mobi, id6.
 no-ipv6
 server=119.29.29.29
 server=119.28.28.28
-server=113.114.114.114
+server=114.114.114.114
 server=182.254.116.116
 server=223.5.5.5
 server=1.2.4.8
-server=/*testflight.apple.com/8.8.4.4
-server=/*testflight.apple.com/23.76.66.98
 address=/mtalk.google.com/108.177.125.188
 [policy]
 static=Final, proxy, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Final.png
 static=Streaming, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Streaming.png
 static=StreamingSE, direct, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/StreamingSE.png
+static=Clubhouse, proxy, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Clubhouse.png
 static=Guard, reject, direct, img-url=https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/IconSet/Outside.png
 [server_remote]
-
 [filter_remote]
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Unbreak.list, tag=后续代理规则修正, update-interval=3600, enabled=true
 https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRuleTest.list, tag=NobyDa去广告（测试版）, update-interval=3600, enabled=true
@@ -37,6 +35,7 @@ https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Guard/Hijacking.list, tag=运营商劫持或恶意网站, update-interval=3600, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/StreamingMedia/Streaming.list, tag=国际流媒体服务, update-interval=3600, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/StreamingMedia/StreamingSE.list, tag=中国流媒体服务(面向海外版本), update-interval=3600, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Extra/Clubhouse.list, tag=Clubhouse, update-interval=3600, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Global.list, tag=全球加速, update-interval=3600, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/China.list, tag=中国直连, update-interval=3600, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Extra/ChinaIP.list, tag=China IP, update-interval=3600, enabled=true
