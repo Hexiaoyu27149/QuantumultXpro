@@ -96,7 +96,7 @@ Final = select, AutoTest
 Proxy = select, AutoTest
 Streaming = select, AutoTest
 StreamingSE = select, Direct
-TestFlight = select, Direct, AutoTest
+TestFlight = select, AutoTest
 Clubhouse = select, SelectTest
 Guard = select, Reject
 # 延迟自动测试
