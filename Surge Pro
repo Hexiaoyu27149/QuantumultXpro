@@ -97,7 +97,6 @@ Proxy = select, AutoTest
 Streaming = select, AutoTest
 StreamingSE = select, Direct
 TestFlight = select, AutoTest
-Clubhouse = select, SelectTest
 Guard = select, Reject
 # 延迟自动测试
 AutoTest = url-test, url=http://www.gstatic.com/generate_204, policy-path=订阅地址, update-interval=3600, timeout=0, interval=0, tolerance=0
@@ -135,9 +134,6 @@ RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ru
 # 在 https://github.com/DivineEngine/Profiles/tree/master/Surge/Rulesets/Extra/Apple 获取所需服务引入 Ruleset 类型规则及新建策略组。
 # TestFlight
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Apple/TestFlight.list,TestFlight,update-interval=3600
-# Clubhouse
-# 如果的你代理服务器不支持或没有开启 udp-relay，请不要使用本文件。
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Clubhouse.list,Clubhouse,update-interval=3600
 # 全球加速
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Global.list,Proxy,update-interval=3600
 # 中国直连
