@@ -1,4 +1,4 @@
-# Update-2021.02.14.09.10
+# Update-2021.02.15.13.20
 # Applicable to Quantumult X (App Store) v1.0.19.-build501
 [general]
 # Quantumult X 会对指定的网址进行相应测试，以确认节点的可用性
@@ -21,11 +21,12 @@ server=223.5.5.5
 server=1.2.4.8
 address=/mtalk.google.com/108.177.125.188
 [policy]
-static=Final, proxy, direct, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Final.png
+static=Final, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Final.png
 static=Streaming, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Streaming.png
 static=StreamingSE, direct, proxy, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/StreamingSE.png
-static=Guard, reject, direct, img-url=https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/IconSet/Outside.png
+static=Guard, reject, img-url=https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/IconSet/Outside.png
 [server_remote]
+
 [filter_remote]
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Unbreak.list, tag=后续代理规则修正, update-interval=3600, enabled=true
 https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRuleTest.list, tag=NobyDa去广告（测试版）, update-interval=3600, enabled=true
@@ -40,9 +41,9 @@ https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/China.list, tag=中国直连, update-interval=3600, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Extra/ChinaIP.list, tag=China IP, update-interval=3600, enabled=true
 [rewrite_remote]
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/General.conf, tag=DivineEngine, update-interval=3600, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/Advertising.conf, tag=DivieEngine去广告, update-interval=3600, opt-parser=false, enabled=true
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/AdvertisingPlus.conf, tag=DivineEngine去广告Plus, update-interval=3600, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/General.conf, tag=DivineEngine, update-interval=3600, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/Advertising.conf, tag=DivieEngine去广告, update-interval=3600, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/AdvertisingPlus.conf, tag=DivineEngine去广告Plus, update-interval=3600, enabled=true
 https://raw.githubusercontent.com/eHpo1/Rules/master/QuantumultX/Rewrite.txt, tag=eHpo1去广告, update-interval=3600, enabled=true
 https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Rewrite_lhie1.conf, tag=NobyDa（lhie1复写）去广告, update-interval=3600, enabled=true
 [server_local]
