@@ -159,7 +159,6 @@ mtalk.google.com = 108.177.125.188
 # 建议必选使用 General.sgmodule，其他 .sgmodule 按需加入
 # 百度防跳转
 ^https?:\/\/.*\.baidu\.com url request-header (\r\n)User-Agent:.+(\r\n) request-header $1User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/16C50 Quark/604.1 T7/10.3 SearchCraft/2.6.3 (Baidu; P1 8.0.0)$2
-
 [MITM]
 skip-server-cert-verify = true
 hostname = www.google.cn, api.abema.io, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, -*.weibo.com, mp.weixin.qq.com, trade-acs.m.taobao.com, pan.baidu.com, vip1.kuwo.cn, weixin110.qq.com, testflight.apple.com, *.baidu.com
