@@ -1,4 +1,4 @@
-# Update-2021.02.15.13.20
+# Update-2021.02.16.09.40
 # Applicable to Quantumult X (App Store) v1.0.19.-build501
 [general]
 # Quantumult X 会对指定的网址进行相应测试，以确认节点的可用性
@@ -11,6 +11,7 @@ geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://raw.githubuserc
 excluded_routes=239.255.255.250/32
 # DNS 排除列表
 dns_exclusion_list=*.cmpassport.com, *.jegotrip.com.cn, *.icitymobile.mobi, id6.me, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com
+excluded_routes=239.255.255.250/32
 [dns]
 no-ipv6
 server=119.29.29.29
