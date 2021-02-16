@@ -1,5 +1,5 @@
 [General]
-# Update-2021.02.15.13.30
+# Update-2021.02.16.09.45
 # ---(通用)---
 # 延迟测试
 # > Internet 测试 URL
@@ -151,8 +151,6 @@ FINAL,Final,dns-failed
 mtalk.google.com = 108.177.125.188
 
 [URL Rewrite]
-# 如果你解锁了「模块」功能可以使用 sgmodule 后清空 [URL Rewrite] 及 [MITM] 部分，MitM 证书重新生成配置。
-# 建议必选使用 General.sgmodule，其他 .sgmodule 按需加入
 
 [Header Rewrite]
 # 据粗略统计，有大概三分之二的本项目使用者停留在了 Surge 2、3 时期故而保留了 Rewrite 及 MitM，所以如果你解锁了「模块」功能可以使用 sgmodule 后清空 [URL Rewrite] 及 [MITM] 部分，MitM 证书重新生成配置。
