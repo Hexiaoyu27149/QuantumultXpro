@@ -1,5 +1,5 @@
 [General]
-# Update-2021.02.18.15.10
+# Update-2021.02.18.21.57
 # ---(通用)---
 # 延迟测试
 # > Internet 测试 URL
@@ -147,9 +147,7 @@ GEOIP,CN,Direct
 FINAL,Final,dns-failed
 
 [Host]
-# Firebase Cloud Messaging
 mtalk.google.com = 108.177.125.188
-# Google Dl
 dl.google.com = server:119.29.29.29
 dl.l.google.com = server:119.29.29.29
 
