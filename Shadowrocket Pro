@@ -1,4 +1,4 @@
-# Update-2021.02.14.09.22
+# Update-2021.02.20.09.20
 [General]
 bypass-system = true
 skip-proxy = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, localhost, *.local, captive.apple.com
@@ -37,9 +37,9 @@ hdslb.com = server:119.29.29.29
 *.mi.com = server:119.29.29.29
 *.xiaomi.com = server:119.29.29.29
 *.pcbeta.com = 120.52.19.113
-cdn.pcbeta.attachment.inimc.com = 120.52.19.113
-cdn.pcbeta.static.inimc.com = 120.52.19.113
-cdn.pcbeta.css.inimc.com = 120.52.19.113
+mtalk.google.com = 108.177.125.188
+dl.google.com = server:119.29.29.29
+dl.l.google.com = server:119.29.29.29
 
 [URL Rewrite]
 # Block Ads Start
