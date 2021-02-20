@@ -147,6 +147,7 @@ GEOIP,CN,Direct
 FINAL,Final,dns-failed
 
 [Host]
+*testflight.apple.com = server:8.8.4.4
 mtalk.google.com = 108.177.125.188
 dl.google.com = server:119.29.29.29
 dl.l.google.com = server:119.29.29.29
