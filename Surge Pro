@@ -1,5 +1,5 @@
 [General]
-# Update-2021.02.20.09.10
+# Update-2021.02.21.11.46
 # ---(通用)---
 # 延迟测试
 # > Internet 测试 URL
@@ -101,8 +101,8 @@ AutoTest = url-test, policy-path=订阅地址, url=http://www.gstatic.com/genera
 SelectTest = select, policy-path=订阅地址, update-interval=300
 Final = select, AutoTest, SelectTest
 Streaming = select, AutoTest, SelectTest
-StreamingSE = select, Direct
 TestFlight = select, AutoTest, SelectTest
+StreamingSE = select, Direct
 Guard = select, Reject
 
 [Rule]
