@@ -1,5 +1,5 @@
 [General]
-# Update-2021.02.22.11.46
+# Update-2021.02.23.07.50
 # ---(通用)---
 # 延迟测试
 # > Internet 测试 URL
@@ -70,6 +70,7 @@ force-http-engine-hosts = *.ott.cibntv.net,123.59.31.1,119.18.193.135,122.14.246
 # ------
 wifi-assist = true
 test-timeout = 3
+doh-server = https://v6.rubyfish.cn/dns-query
 
 [Replica]
 # ---(实验性功能)---
