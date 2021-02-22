@@ -12,7 +12,6 @@ proxy-test-url = http://www.gstatic.com/generate_204
 tls-provider = openssl
 # GeoIP 数据库
 geoip-maxmind-url = https://cdn.jsdelivr.net/gh/Hackl0us/GeoIP2-CN@release/Country.mmdb
-
 # IPv6 支持（开启）
 ipv6 = true
 # ------
