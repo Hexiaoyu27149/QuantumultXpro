@@ -113,8 +113,6 @@ https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body
 ^https?:\/\/testflight\.apple\.com\/v\d\/accounts\/.+?\/install$ url script-request-body https://gist.githubusercontent.com/NobyDa/9be418b93afc5e9c8a8f4d28ae403cf2/raw/TF_Download.js
 # GitHub 访问加速（默认禁用、需开启请自行注视掉代码前的“#”）
 #^(https?:\/\/(?:raw|gist)\.githubusercontent\.com\/.+)$ url 302 https://github.pengym.workers.dev/$1
-# Sub-Store
-^https?:\/\/sub\.store url script-analyze-echo-response https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/sub-store.min.js
 [task_local]
 # 疫情动态 （默认每天8～23点、每小时播报一次）
 0 8-23/1 * * * https://raw.githubusercontent.com/Mazetsz/QX/master/nCov_new.js, tag=疫情动态, img-url=https://raw.githubusercontent.com/Orz-3/task/master/COVID-19.png,enabled=true
@@ -123,4 +121,4 @@ https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body
 https://gitee.com/chavyleung/scripts/raw/master/box/chavy.boxjs.js, tag=BoxJs.net, path=^/, enabled=true
 [mitm]
 skip_validating_cert = true
-hostname =api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, -*.weibo.com, mp.weixin.qq.com, trade-acs.m.taobao.com, *.kuwo.cn,vip1.kuwo.cn, pan.baidu.com, api.m.jd.com, duckduckgo.com, *.baidu.com,m.baidu.com, raw.githubusercontent.com, gist.githubusercontent.com, testflight.apple.com, sub.store
+hostname =api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, -*.weibo.com, mp.weixin.qq.com, trade-acs.m.taobao.com, *.kuwo.cn,vip1.kuwo.cn, pan.baidu.com, api.m.jd.com, duckduckgo.com, *.baidu.com,m.baidu.com, raw.githubusercontent.com, gist.githubusercontent.com, testflight.apple.com
