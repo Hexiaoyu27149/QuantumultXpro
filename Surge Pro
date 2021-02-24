@@ -147,6 +147,10 @@ GEOIP,CN,Direct
 FINAL,Final,dns-failed
 
 [Host]
+*testflight.apple.com = server:8.8.4.4
+mtalk.google.com = 108.177.125.188
+dl.google.com = server:119.29.29.29
+dl.l.google.com = server:119.29.29.29
 *.126.com = server:119.29.29.29
 *.126.net = server:119.29.29.29
 *.127.net = server:119.29.29.29
@@ -171,10 +175,6 @@ cdn.pcbeta.attachment.inimc.com = 120.52.19.113
 cdn.pcbeta.css.inimc.com = 120.52.19.113
 cdn.pcbeta.static.inimc.com = 120.52.19.113
 hdslb.com = server:119.29.29.29
-*testflight.apple.com = server:8.8.4.4
-mtalk.google.com = 108.177.125.188
-dl.google.com = server:119.29.29.29
-dl.l.google.com = server:119.29.29.29
 
 [Header Rewrite]
 # 据粗略统计，有大概三分之二的本项目使用者停留在了 Surge 2、3 时期故而保留了 Rewrite 及 MitM，所以如果你解锁了「模块」功能可以使用 sgmodule 后清空 [URL Rewrite] 及 [MITM] 部分，MitM 证书重新生成配置。
