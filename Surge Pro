@@ -147,6 +147,30 @@ GEOIP,CN,Direct
 FINAL,Final,dns-failed
 
 [Host]
+*.126.com = server:119.29.29.29
+*.126.net = server:119.29.29.29
+*.127.net = server:119.29.29.29
+*.163.com = server:119.29.29.29
+*.alicdn.com = server:223.5.5.5
+*.aliyun.com = server:223.5.5.5
+*.baidu.com = server:syslib
+*.bdstatic.com = server:syslib
+*.bilibili.com = server:119.29.29.29
+*.jd.com = server:119.28.28.28
+*.mi.com = server:119.29.29.29
+*.netease.com = server:119.29.29.29
+*.pcbeta.com = 120.52.19.113
+*.qpic.cn = server:119.28.28.28
+*.qq.com = server:119.28.28.28
+*.taobao.com = server:223.6.6.6
+*.tencent.com = server:119.28.28.28
+*.tmall.com = server:223.6.6.6
+*.weixin.com = server:119.28.28.28
+*.xiaomi.com = server:119.29.29.29
+cdn.pcbeta.attachment.inimc.com = 120.52.19.113
+cdn.pcbeta.css.inimc.com = 120.52.19.113
+cdn.pcbeta.static.inimc.com = 120.52.19.113
+hdslb.com = server:119.29.29.29
 *testflight.apple.com = server:8.8.4.4
 mtalk.google.com = 108.177.125.188
 dl.google.com = server:119.29.29.29
