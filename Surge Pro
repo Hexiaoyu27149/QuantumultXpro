@@ -96,7 +96,7 @@ Reject = reject
 [Proxy Group]
 Proxy = select, AutoTest, SelectTest
 # 延迟自动测试
-AutoTest = url-test, policy-path=订阅地址, interval=600, tolerance=50, update-interval=300
+AutoTest = url-test, policy-path=订阅地址, url=http://www.gstatic.com/generate_204, interval=600, tolerance=50, update-interval=300
 # 手动测试延迟
 SelectTest = select, policy-path=订阅地址, interval=600, tolerance=50, update-interval=300
 Final = select, AutoTest, SelectTest
