@@ -70,7 +70,6 @@ force-http-engine-hosts = *.ott.cibntv.net,123.59.31.1,119.18.193.135,122.14.246
 # ------
 wifi-assist = true
 test-timeout = 3
-doh-server = https://dns.alidns.com/dns-query
 
 [Replica]
 # ---(实验性功能)---
