@@ -1,5 +1,5 @@
 [General]
-# Update-2021.03.05.17.10
+# Update-2021.03.05.18.10
 # ---(通用)---
 # 延迟测试
 # > Internet 测试 URL
@@ -71,8 +71,8 @@ force-http-engine-hosts = *.ott.cibntv.net,123.59.31.1,119.18.193.135,122.14.246
 wifi-assist = true
 test-timeout = 3
 # DNS-OVER-HTPPS
-#
-doh-server = https://dns.alidns.com/dns-query
+# 国内正常情况下没必要使用DoH，性能损耗比较严重。部分DoH不支持ECS导致CDN分配错误而导致资源加载缓慢。
+# doh-server = https://dns.alidns.com/dns-query
 
 [Replica]
 # ---(实验性功能)---
