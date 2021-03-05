@@ -1,4 +1,4 @@
-# Update-2021.03.04.21.25
+# Update-2021.03.05.16.30
 # Applicable to Quantumult X (App Store) v1.0.19.-build501
 [general]
 # Quantumult X 会对指定的网址进行相应测试，以确认节点的可用性
@@ -136,8 +136,13 @@ https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body
 # 疫情动态 （默认每天8～23点、每小时播报一次）
 0 8-23/1 * * * https://raw.githubusercontent.com/Mazetsz/QX/master/nCov_new.js, tag=疫情动态, img-url=https://raw.githubusercontent.com/Orz-3/task/master/COVID-19.png, enabled=true
 [http_backend]
-# BoxJs
-https://gitee.com/chavyleung/scripts/raw/master/box/chavy.boxjs.js, tag=BoxJs.net, path=^/, enabled=true
+# 部署一个本地 HTTP 服务器，并使用 JavaScript 进行数据处理。
+# 输入变量为：$reqeust.url、$reqeust.path、$reqeust.headers、$reqeust.body。
+# 使用 $done 输出像 $done({status:"HTTP/1.1 200 OK"}, headers:{}, body:"here is a string") 这样的返回响应。
+# 此外，您还可以使用签名或任何其他验证方法来验证请求是否合法。
+# 部署后您应该通过 http://127.0.0.1:9999/your-path/your-api/. 进行访问。服务器默认监听端口为 9999，您可以在UI中进行更改。
+#
+# [http_backend] 完整示例请查看「示例」
 [mitm]
 skip_validating_cert = true
 hostname = api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, -*.weibo.com, mp.weixin.qq.com, trade-acs.m.taobao.com, *.kuwo.cn, vip1.kuwo.cn, pan.baidu.com, api.m.jd.com, duckduckgo.com, *.baidu.com, m.baidu.com, raw.githubusercontent.com, gist.githubusercontent.com, testflight.apple.com, sub.store, 
