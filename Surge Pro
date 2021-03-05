@@ -103,7 +103,7 @@ AutoTest = url-test, url=http://www.gstatic.com/generate_204, policy-path=订阅
 # 可用性自动测试
 Fallback = fallback, url=http://www.gstatic.com/generate_204, policy-path=订阅地址, interval=600, tolerance=50, update-interval=3600
 # 手动测试延迟
-SelectTest = select, policy-path=订阅地址, interval=600, tolerance=50, update-interval=43200
+SelectTest = select, policy-path=订阅地址, interval=600, tolerance=50, update-interval=3600
 Final = select, AutoTest, SelectTest
 Streaming = select, AutoTest, SelectTest
 TestFlight = select, AutoTest, SelectTest
