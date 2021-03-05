@@ -97,9 +97,11 @@ Direct = direct
 Reject = reject
 
 [Proxy Group]
-Proxy = select, AutoTest, SelectTest
+Proxy = select, AutoTest, Fallback, SelectTest
 # 延迟自动测试
-AutoTest = url-test, url=http://www.gstatic.com/generate_204, policy-path=订阅地址, interval=600, tolerance=50, update-interval=43200
+AutoTest = url-test, url=http://www.gstatic.com/generate_204, policy-path=订阅地址, interval=600, tolerance=50, update-interval=3600
+# 可用性自动测试
+Fallback = fallback, url=http://www.gstatic.com/generate_204, policy-path=订阅地址, interval=600, tolerance=50, update-interval=3600
 # 手动测试延迟
 SelectTest = select, policy-path=订阅地址, interval=600, tolerance=50, update-interval=43200
 Final = select, AutoTest, SelectTest
@@ -124,25 +126,25 @@ PROCESS-NAME,uTorrent,Direct
 PROCESS-NAME,WebTorrent,Direct
 PROCESS-NAME,WebTorrent Helper,Direct
 # 后续规则修正
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Unbreak.list,Direct,update-interval=86400
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Unbreak.list,Direct,update-interval=3600
 # 广告拦截
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Advertising.list,Guard,update-interval=86400
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Advertising.list,Guard,update-interval=3600
 # 隐私保护
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Privacy.list,Guard,update-interval=86400
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Privacy.list,Guard,update-interval=3600
 # 运营商劫持或恶意网站
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Hijacking.list,Guard,update-interval=86400
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Hijacking.list,Guard,update-interval=3600
 # 国际流媒体服务
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/Streaming.list,Streaming,update-interval=86400
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/Streaming.list,Streaming,update-interval=3600
 # 中国流媒体服务（面向海外版本）
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/StreamingSE.list,StreamingSE,update-interval=86400
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/StreamingSE.list,StreamingSE,update-interval=3600
 # Apple 服务
 # 在 https://github.com/DivineEngine/Profiles/tree/master/Surge/Rulesets/Extra/Apple 获取所需服务引入 Ruleset 类型规则及新建策略组。
 # TestFlight
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Apple/TestFlight.list,TestFlight,update-interval=86400
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Apple/TestFlight.list,TestFlight,update-interval=3600
 # 全球加速
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Global.list,Proxy,update-interval=86400
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Global.list,Proxy,update-interval=3600
 # 中国直连
-RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/China.list,Direct,update-interval=86400
+RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/China.list,Direct,update-interval=3600
 # 局域网
 RULE-SET,LAN,Direct
 # GeoIP China
