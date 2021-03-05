@@ -1,5 +1,5 @@
 [General]
-# Update-2021.03.03.13.50
+# Update-2021.03.05.17.10
 # ---(通用)---
 # 延迟测试
 # > Internet 测试 URL
@@ -70,7 +70,10 @@ force-http-engine-hosts = *.ott.cibntv.net,123.59.31.1,119.18.193.135,122.14.246
 # ------
 wifi-assist = true
 test-timeout = 3
+# DNS-OVER-HTPPS
+#
 doh-server = https://dns.alidns.com/dns-query
+
 [Replica]
 # ---(实验性功能)---
 # 0 为关闭，1 为开启
