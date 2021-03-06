@@ -143,4 +143,4 @@ https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body
 # [http_backend] 完整示例请查看「示例」
 [mitm]
 skip_validating_cert = true
-hostname = api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, -*.weibo.com, mp.weixin.qq.com, trade-acs.m.taobao.com, *.kuwo.cn, vip1.kuwo.cn, pan.baidu.com, api.m.jd.com, weixin110.qq.com, duckduckgo.com, *.baidu.com, testflight.apple.com, 
+hostname = api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, -*.weibo.com, mp.weixin.qq.com, trade-acs.m.taobao.com, vip1.kuwo.cn, pan.baidu.com, api.m.jd.com, weixin110.qq.com, duckduckgo.com, *.baidu.com, testflight.apple.com, 
