@@ -97,16 +97,14 @@ Direct = direct
 Reject = reject
 
 [Proxy Group]
-Proxy = select, AutoTest, Fallback, SelectTest
-# 延迟自动测试
-AutoTest = url-test, url=http://www.gstatic.com/generate_204, policy-path=订阅地址, interval=600, tolerance=50, update-interval=3600
 # 可用性自动测试
 Fallback = fallback, url=http://www.gstatic.com/generate_204, policy-path=订阅地址, interval=600, tolerance=50, update-interval=3600
 # 手动测试延迟
 SelectTest = select, policy-path=订阅地址, interval=600, tolerance=50, update-interval=3600
-Final = select, AutoTest, SelectTest
-Streaming = select, AutoTest, SelectTest
-TestFlight = select, AutoTest, SelectTest
+Proxy = select, Fallback, SelectTest
+Final = select, Fallback, SelectTest
+Streaming = select, Fallback, SelectTest
+TestFlight = select, Fallback, SelectTest
 StreamingSE = select, Direct
 Guard = select, Reject
 
