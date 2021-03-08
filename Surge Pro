@@ -1,5 +1,5 @@
 [General]
-# Update-2021.03.06.14.00
+# Update-2021.03.09.06.30
 # ---(通用)---
 # 延迟测试
 # > Internet 测试 URL
@@ -75,6 +75,7 @@ test-timeout = 3
 doh-server = https://dns.alidns.com/dns-query
 
 [Replica]
+
 # ---(实验性功能)---
 # 0 为关闭，1 为开启
 # > 隐藏 Apple 请求
