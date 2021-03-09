@@ -1,5 +1,5 @@
 [General]
-# Update-2021.03.09.09.20
+# Update-2021.03.09.09.30
 # 通用设置
 # > 增强版 Wi-Fi 助理
 # (在 Wi-Fi 网络不佳时尝试使用数据网络建立连接，请仅当使用不限量的数据流量时开启)
@@ -91,6 +91,12 @@ PROCESS-NAME,Transmission,Direct
 PROCESS-NAME,uTorrent,Direct
 PROCESS-NAME,WebTorrent,Direct
 PROCESS-NAME,WebTorrent Helper,Direct
+# 屏蔽 iOS 系统更新（如需屏蔽iOS系统更新请自行注释掉“#"即可生效）
+#DOMAIN,mesu.apple.com,REJECT
+#DOMAIN,gdmf.apple.com,REJECT
+#DOMAIN,updates-http.cdn-apple.com,REJECT
+#DOMAIN,xp.apple.com,REJECT
+
 # 后续规则修正
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Unbreak.list,Direct
 # 广告拦截
