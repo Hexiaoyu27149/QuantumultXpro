@@ -1,47 +1,43 @@
-# Update-2021.03.09.09.40
+# Update-2021.03.09.13.20
 # Applicable to Quantumult X (App Store) v1.0.19.-build501
 [general]
 # Quantumult X 会对指定的网址进行相应测试，以确认节点的可用性
 server_check_url=http://www.gstatic.com/generate_204
-#资源解析器
+
+# 资源解析器
 resource_parser_url=https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
+
 # api获取以及节点信息查询
 geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IP_API.js
+
 # DNS 排除列表
-dns_exclusion_list=*.cmpassport.com, *.jegotrip.com.cn, *.icitymobile.mobi, id6.me, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com
+dns_exclusion_list=*.cmpassport.com, *.jegotrip.com.cn, *.icitymobile.mobi, id6.me, *.pingan.com.cn, *.cmbchina.com
 excluded_routes=239.255.255.250/32
+
 [dns]
+# 禁用 IPv6
 no-ipv6
+
+# 自定义 DNS
 server=119.29.29.29
 server=223.5.5.5
-server=/*testflight.apple.com/8.8.4.4
+
+# 本地 DNS 映射
+address=/mtalk.google.com/108.177.125.188
 server=/dl.google.com/119.29.29.29
 server=/dl.l.google.com/119.29.29.29
-address=/mtalk.google.com/108.177.125.188
-server=/*.taobao.com/223.5.5.5
-server=/*.tmall.com/223.5.5.5
-server=/*.alipay.com/223.5.5.5
-server=/*.alicdn.com/223.5.5.5
-server=/*.aliyun.com/223.5.5.5
-server=/*.jd.com/119.28.28.28
-server=/*.qq.com/119.28.28.28
-server=/*.tencent.com/119.28.28.28
-server=/*.weixin.com/119.28.28.28
-server=/*.bilibili.com/119.29.29.29
-server=/hdslb.com/119.29.29.29
-server=/*.163.com/119.29.29.29
-server=/*.126.com/119.29.29.29
-server=/*.126.net/119.29.29.29
-server=/*.127.net/119.29.29.29
-server=/*.netease.com/119.29.29.29
-server=/*.mi.com/119.29.29.29
-server=/*.xiaomi.com/119.29.29.29
+
+# 策略组
 [policy]
-static=Final, proxy, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Final.png
+static=Final, proxy, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Final.png
 static=Streaming, proxy, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png
 static=StreamingSE, direct, proxy, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/StreamingSE.png
-static=Guard, reject, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png
+static=Guard, reject, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png
+
+# 机场订阅
 [server_remote]
+
+# 分流规则
 [filter_remote]
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Unbreak.list, tag=后续代理规则修正, update-interval=86400, enabled=true
 https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRuleTest.list, tag=NobyDa去广告（测试版）, update-interval=86400, enabled=true
@@ -55,13 +51,16 @@ https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Global.list, tag=全球加速, update-interval=86400, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/China.list, tag=中国直连, update-interval=86400, enabled=true
 https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Extra/ChinaIP.list, tag=China IP, update-interval=86400, enabled=true
+# 重写引用
 [rewrite_remote]
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/General.conf, tag=DivineEngine, update-interval=86400, enabled=true
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/Advertising.conf, tag=DivieEngine去广告, update-interval=86400, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/General.conf, tag=神机复写, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrite/Block/Advertising.conf, tag=神机去广告, update-interval=86400, opt-parser=false, enabled=true
 https://raw.githubusercontent.com/eHpo1/Rules/master/QuantumultX/Rewrite.txt, tag=eHpo1去广告, update-interval=86400, enabled=true
 https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Rewrite_lhie1.conf, tag=NobyDa（lhie1复写）去广告, update-interval=86400, enabled=true
 [server_local]
+
 [filter_local]
+# 屏蔽iOS更新
 # 如果需要屏蔽iOS系统更新、请自行删除掉屏蔽代码开头的“;”
 ;host, mesu.apple.com, reject
 ;host, gdmf.apple.com, reject
@@ -88,10 +87,12 @@ ip-cidr, 127.0.0.0/8, direct
 ip-cidr, 100.64.0.0/10, direct
 ip-cidr, 224.0.0.0/4, direct
 ip6-cidr, fe80::/10, direct
+
 # GeoIP China(若启用，则禁用 ChinaIP.list)
-# 已采用 ip 池数据，因此用"-"注释掉 geoip cn
 -geoip, cn, direct
+
 final, Final
+
 [rewrite_local]
 # 微博去启动及内部广告
 ^https?://(sdk|wb)app.uve.weibo.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua) url script-response-body https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js
@@ -132,6 +133,7 @@ https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body
 # 疫情动态 （默认每天8～23点、每小时播报一次）
 0 8-23/1 * * * https://raw.githubusercontent.com/Mazetsz/QX/master/nCov_new.js, tag=疫情动态, img-url=https://raw.githubusercontent.com/Orz-3/task/master/COVID-19.png, enabled=true
 [http_backend]
+#
 # 部署一个本地 HTTP 服务器，并使用 JavaScript 进行数据处理。
 # 输入变量为：$reqeust.url、$reqeust.path、$reqeust.headers、$reqeust.body。
 # 使用 $done 输出像 $done({status:"HTTP/1.1 200 OK"}, headers:{}, body:"here is a string") 这样的返回响应。
@@ -139,6 +141,9 @@ https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body
 # 部署后您应该通过 http://127.0.0.1:9999/your-path/your-api/. 进行访问。服务器默认监听端口为 9999，您可以在UI中进行更改。
 #
 # [http_backend] 完整示例请查看「示例」
+
 [mitm]
+# 注意！！！您应该始终保护您的 CA 密码和 p12 的私密性。
+#
 skip_validating_cert = true
 hostname = api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, -*.weibo.com, mp.weixin.qq.com, trade-acs.m.taobao.com, vip1.kuwo.cn, pan.baidu.com, api.m.jd.com, weixin110.qq.com, duckduckgo.com, *.baidu.com, testflight.apple.com, 
