@@ -1,4 +1,4 @@
-# Update-2021.03.09.17.00
+# Update-2021.03.09.19.00
 # Applicable to Quantumult X (App Store) v1.0.19.-build501
 
 [general]
@@ -29,7 +29,7 @@ server=/dl.google.com/119.29.29.29
 server=/dl.l.google.com/119.29.29.29
 
 [policy]
-static=Final, proxy, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Final.png
+static=Final, proxy, direct, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/Color/SSID.png
 static=Streaming, proxy, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png
 static=StreamingSE, direct, proxy, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/StreamingSE.png
 static=Guard, reject, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png
