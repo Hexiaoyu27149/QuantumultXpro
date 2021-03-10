@@ -1,4 +1,4 @@
-# Update-2021.03.09.19.00
+# Update-2021.03.010.17.15
 # Applicable to Quantumult X (App Store) v1.0.19.-build501
 
 [general]
@@ -143,6 +143,10 @@ https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body
 
 # google
 ^https?:\/\/(www.)?(g|google)\.cn url 302 https://www.google.com
+
+# 阻止google.com 跳转到google.com.hk
+^https?:\/\/(www\.)?g\.cn url 302 https://www.google.com/ncr
+^https?:\/\/(www\.)?google\.cn url 302 https://www.google.com/ncr
 
 # 百度防跳转
 ^https?:\/\/.*\.baidu\.com url request-header (\r\n)User-Agent:.+(\r\n) request-header $1User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/16C50 Quark/604.1 T7/10.3 SearchCraft/2.6.3 (Baidu; P1 8.0.0)$2
