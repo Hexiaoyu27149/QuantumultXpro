@@ -132,6 +132,9 @@ dl.l.google.com = server:119.29.29.29
 [URL Rewrite]
 # Youtube去广告
 (^https?:\/\/[\w-]+\.googlevideo\.com\/.+)(ctier=L)(&.+) $1$3 302
+# 阻止google.com 跳转到google.com.hk
+^https?:\/\/(www\.)?g\.cn https://www.google.com/ncr 302
+^https?:\/\/(www\.)?google\.cn https://www.google.com/ncr 302
 
 [Header Rewrite]
 # 据粗略统计，有大概三分之二的本项目使用者停留在了 Surge 2、3 时期故而保留了 Rewrite 及 MitM，所以如果你解锁了「模块」功能可以使用 sgmodule 后清空 [URL Rewrite] 及 [MITM] 部分，MitM 证书重新生成配置。
