@@ -142,7 +142,7 @@ dl.l.google.com = server:119.29.29.29
 [Header Rewrite]
 # 据粗略统计，有大概三分之二的本项目使用者停留在了 Surge 2、3 时期故而保留了 Rewrite 及 MitM，所以如果你解锁了「模块」功能可以使用 sgmodule 后清空 [URL Rewrite] 及 [MITM] 部分，MitM 证书重新生成配置。
 # 建议必选使用 General.sgmodule，其他 .sgmodule 按需加入
-# 模块地址：https://github.com/DivineEngine/Profiles/tree/master/Surge/Module
+# # DivineEngine模块地址：https://github.com/DivineEngine/Profiles/tree/master/Surge/Module
 # 百度防跳转
 ^https?:\/\/.*\.baidu\.com header-replace User-Agent "Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/16C50 Quark/604.1 T7/10.3 SearchCraft/2.6.3 (Baidu; P1 8.0.0)$2"
 # 百度云VIP倍速播放重写
