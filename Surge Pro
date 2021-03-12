@@ -139,7 +139,7 @@ dl.l.google.com = server:119.29.29.29
 ^https?:\/\/(www\.)?g\.cn https://www.google.com 302
 ^https?:\/\/(www\.)?google\.cn https://www.google.com 302
 # Safari全能搜索
-# > Safari全能搜索 • 命令+空格+关键词指定引擎快速搜索(Safari 搜索改为DuckDuckGO)集成主机名
+# > 以下为Safari全能搜索、需要把Safari的搜索引擎设置为：DuckDuckGo
 #gm   (Google图片)
 ^https:\/\/duckduckgo.com\/\?q=gm\+([^&]+).+ https://www.google.com/search?&tbm=isch&q=$1 302
 # gh   (GitHub)
