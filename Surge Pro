@@ -168,6 +168,8 @@ dl.l.google.com = server:119.29.29.29
 ^https:\/\/duckduckgo.com\/\?q=ddg\+([^&]+).+ https://duckduckgo.com/?ia=about&q=$1 302
 # 无指令: 谷歌
 ^https:\/\/duckduckgo.com\/\?q=([^&]+).+ https://www.google.com/search?q=$1 302
+# Google
+^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
 
 [Header Rewrite]
 # 据粗略统计，有大概三分之二的本项目使用者停留在了 Surge 2、3 时期故而保留了 Rewrite 及 MitM，所以如果你解锁了「模块」功能可以使用 sgmodule 后清空 [URL Rewrite] 及 [MITM] 部分，MitM 证书重新生成配置。
