@@ -1,8 +1,7 @@
 [General]
-# Update-2021.03.10.17.50
+# Update-2021.03.12.08.42
 # 通用设置
 # > 增强版 Wi-Fi 助理
-# (在 Wi-Fi 网络不佳时尝试使用数据网络建立连接，请仅当使用不限量的数据流量时开启)
 wifi-assist = true
 # > Internet 测试 URL
 internet-test-url = http://wifi.vivo.com.cn/generate_204
@@ -31,22 +30,26 @@ skip-proxy = 127.0.0.1, 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10
 exclude-simple-hostnames = true
 # > Network framwork
 network-framework = false
-# > DNS 服务器 (如无必要不建议使用 DNS over HTTPS)
+# > DNS 服务器 
 dns-server = 119.29.29.29, 223.5.5.5, system
+# > DNS over HTPPS
+# 国内正常情况下没必要使用DoH，性能损耗比较严重。部分DoH不支持ECS导致CDN分配错误而导致资源加载缓慢。如无必要不建议使用 DNS over HTTPS
+# doh-server = https://dns.alidns.com/dns-query
 # > 从 /etc/hosts 读取 DNS 记录
 read-etc-hosts = true
 # 高级设置
 # > 日志级别
-loglevel = notify
+loglevel = warning
 # > 当遇到 REJECT 策略时返回错误页
 show-error-page-for-reject = true
 # > Always Real IP Hosts
 always-real-ip = msftconnecttest.com, msftncsi.com, *.msftconnecttest.com, *.msftncsi.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com
 # > TCP Force HTTP Hosts
 force-http-engine-hosts = *.ott.cibntv.net,123.59.31.1,119.18.193.135,122.14.246.33,175.102.178.52
-# DNS-OVER-HTPPS
-# 国内正常情况下没必要使用DoH，性能损耗比较严重。部分DoH不支持ECS导致CDN分配错误而导致资源加载缓慢。如无必要不建议使用 DNS over HTTPS
-doh-server = https://dns.alidns.com/dns-query
+# > HTTP-API
+# 让另一个App或者设备通过HTTP-API控制Surge功能
+# 依次为：密码，主机名，端口
+http-api = XXXX@127.0.0.1:6171
 
 [Replica]
 # 0 为关闭，1 为开启
@@ -91,13 +94,11 @@ PROCESS-NAME,Transmission,Direct
 PROCESS-NAME,uTorrent,Direct
 PROCESS-NAME,WebTorrent,Direct
 PROCESS-NAME,WebTorrent Helper,Direct
-# > 屏蔽 iOS 系统更新
-# 如需屏蔽iOS系统更新请自行注释掉“#"即可生效
-#DOMAIN,mesu.apple.com,REJECT
-#DOMAIN,gdmf.apple.com,REJECT
-#DOMAIN,updates-http.cdn-apple.com,REJECT
-#DOMAIN,xp.apple.com,REJECT
-
+# > 屏蔽 iOS 系统更新（如需屏蔽iOS系统更新请自行注释掉“#"即可生效）
+# DOMAIN,mesu.apple.com,REJECT
+# DOMAIN,gdmf.apple.com,REJECT
+# DOMAIN,updates-http.cdn-apple.com,REJECT
+# DOMAIN,xp.apple.com,REJECT
 # 后续规则修正
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Unbreak.list,Direct
 # 广告拦截
@@ -106,7 +107,7 @@ RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ru
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Privacy.list,Guard
 # 运营商劫持或恶意网站
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Hijacking.list,Guard
-# 国际流媒体服务
+# Streaming 国际流媒体服务
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/Streaming.list,Streaming
 # 中国流媒体服务（面向海外版本）
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/StreamingSE.list,StreamingSE
@@ -118,21 +119,22 @@ RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ru
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Global.list,Proxy
 # 中国直连
 RULE-SET,https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/China.list,Direct
-# 局域网
+# Local Area Network 局域网
 RULE-SET,LAN,Direct
 # GeoIP China
 GEOIP,CN,Direct
 FINAL,Final,dns-failed
 
 [Host]
+# Firebase Cloud Messaging
 mtalk.google.com = 108.177.125.188
+# Google Dl
 dl.google.com = server:119.29.29.29
 dl.l.google.com = server:119.29.29.29
 
 [URL Rewrite]
 # Youtube去广告
 (^https?:\/\/[\w-]+\.googlevideo\.com\/.+)(ctier=L)(&.+) $1$3 302
-
 # 阻止google.com 跳转到google.com.hk
 ^https?:\/\/(www\.)?g\.cn https://www.google.com 302
 ^https?:\/\/(www\.)?google\.cn https://www.google.com 302
@@ -141,10 +143,8 @@ dl.l.google.com = server:119.29.29.29
 # 据粗略统计，有大概三分之二的本项目使用者停留在了 Surge 2、3 时期故而保留了 Rewrite 及 MitM，所以如果你解锁了「模块」功能可以使用 sgmodule 后清空 [URL Rewrite] 及 [MITM] 部分，MitM 证书重新生成配置。
 # 建议必选使用 General.sgmodule，其他 .sgmodule 按需加入
 # 模块地址：https://github.com/DivineEngine/Profiles/tree/master/Surge/Module
-
 # 百度防跳转
 ^https?:\/\/.*\.baidu\.com header-replace User-Agent "Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/16C50 Quark/604.1 T7/10.3 SearchCraft/2.6.3 (Baidu; P1 8.0.0)$2"
-
 # 百度云VIP倍速播放重写
 https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user header-replace Connection keep-alive
 
@@ -153,27 +153,15 @@ skip-server-cert-verify = true
 hostname = www.google.cn, api.abema.io, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, -*.weibo.com, mp.weixin.qq.com, trade-acs.m.taobao.com, api.m.jd.com, pan.baidu.com, vip1.kuwo.cn, weixin110.qq.com, testflight.apple.com, *.baidu.com
 
 [Script]
-
 微博开屏去广告 = type=http-response,pattern=^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua),requires-body=1,max-size=0,timeout=30,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js,script-update-interval=0
-
 微博去广告 = type=http-response,pattern=^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/photos/pic_recommend_status|video/tiny_stream_video_list|photo/info),requires-body=1,max-size=-1,timeout=30,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_ad.js,script-update-interval=0
-
 微信公众号去广告 = type=http-request,pattern=^https://mp\.weixin\.qq\.com/mp/getappmsgad,timeout=30,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js,script-update-interval=0
-
 淘宝比价1 Lite(通知版) = type=http-request,pattern=^http://.+/amdc/mobileDispatch,requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price_lite.js,script-update-interval=0
-
 淘宝比价2 Lite(通知版) = type=http-response,pattern=^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail,requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price_lite.js,script-update-interval=0
-
 京东历史价格查询 = type=http-response,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js,script-update-interval=0
-
-百度云VIP倍速播放 = type=http-response,pattern=https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user,requires-body=1,max-size=0,timeout=20,script-path= https://raw.githubusercontent.com/mieqq/mieqq/master/baiduCloud.js
-
+百度云VIP倍速播放 = type=http-response,pattern=https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user,requires-body=1,max-size=0,timeout=20,script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/baiduCloud.js
 酷我音乐VIP = type=http-response,pattern=^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice),requires-body=1,max-size=0,timeout=60,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Kuwo.js,script-update-interval=0
-
 微信链接跳转 = type=http-response,pattern=^https?:\/\/weixin110\.qq\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi,script-path=https://raw.githubusercontent.com/HotKids/Rules/master/Script/weixin110.js
-
 疫情播报 = type=cron,cronexp=0 8-23/1 * * *,wake-system=1,timeout=60,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/nCov.js,script-update-interval=0
-
 TestFlight下载修正 = type=http-request,pattern=^https?:\/\/testflight\.apple\.com\/v\d\/accounts\/.+?\/install$,requires-body=1,max-size=0,script-path=https://gist.githubusercontent.com/NobyDa/9be418b93afc5e9c8a8f4d28ae403cf2/raw/TF_Download.js
-
-# Surge自动策略 = type=event,event-name=network-changed,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tools/AutoPolicy/auto-policy.js,script-update-interval=0
+// Surge自动策略 = type=event,event-name=network-changed,script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tools/AutoPolicy/auto-policy.js,script-update-interval=0
